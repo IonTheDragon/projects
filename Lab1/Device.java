@@ -3,7 +3,7 @@
 		UUID id;
 		String name;
 		String price;
-		int count;
+		static int count;
 		String company;
 		String model;
 		String os;
