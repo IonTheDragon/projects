@@ -8,7 +8,7 @@ public class Order {
 	List<Object> Orders = new LinkedList<>();
 	ShoppingCart PurchasingItems = new ShoppingCart();
 	Credentials Customers = new Credentials();
-	Map<Date, Object> LimitedObjects = new HashMap<Date, Object>();	 
+	Map<Date, List<? extends Object>> LimitedItems = new HashMap<>();
 		
 	public void Buy(ShoppingCart m_PurchasingItems, Credentials m_Customers, int Customer) {
 		this.CreationTime = new Date();		
@@ -18,12 +18,14 @@ public class Order {
 		User[] UsersArray = {};
 		UsersArray = Customers.Users.toArray(new User[Customers.Users.size()]);
 		User OurUser = UsersArray[Customer];
+		List<Object> order = new LinkedList<>();
 		for (int i = 0; i < PurchasingItemsList.size(); i++) {
 			this.Orders.add(PurchasingItemsList.get(i));
-			this.LimitedObjects.put(CreationTime, PurchasingItemsList.get(i));
+			order.add(PurchasingItemsList.get(i));
 		}
-		this.Orders.add(OurUser);	
-		this.LimitedObjects.put(CreationTime, OurUser);	//запись текущего заказа с временем в список временного хранения
+		this.Orders.add(OurUser);
+		order.add(OurUser);
+		this.LimitedItems.put(CreationTime, order);	//запись текущего заказа с временем в список временного хранения
 		this.Status = "Ожидание";
 	}
 	
@@ -122,31 +124,33 @@ public class Order {
 	}	
 	
 	public void checkLimitation() { 
-	System.out.println("________________________");	
 	System.out.println("Проверка заказа");
  // Pass 1 - collect delete candidates		
 	List<Object> deleteOrders = new LinkedList<>();	
-	Date CurrentTime = new Date();		
-	long pastTime = CurrentTime.getTime()-WaitingTime;
-	Date CheckingTime = new Date(pastTime);
+	Date CurrentTime = new Date();
+	long CurrentTimeMls = CurrentTime.getTime();		
+	long pastTime = CurrentTimeMls-WaitingTime;
 	int needDelete = 0;
-	
 	// Получаем набор элементов
-	Set<Map.Entry<Date, Object>> set = LimitedObjects.entrySet();
-	for (Map.Entry<Date, Object> LimOrder : set) {
-		if ((LimOrder.getKey().getTime()<=pastTime)&&"Обработан".equalsIgnoreCase(Status)) {
-			needDelete = 1;
-			deleteOrders.add(LimOrder.getValue());
-		}		
-	}
 	
+	for(Date date : LimitedItems.keySet()){
+		for (Object item : LimitedItems.get(date)){		
+			if (date.getTime()<=pastTime) {	
+				if ("Обработан".equalsIgnoreCase(Status)) {
+					needDelete = 1;
+					deleteOrders.add(item);													
+				}
+			}	
+		}
+	}
+
 	if (needDelete == 0) {
 		System.out.println("________________________");	
 		System.out.println("Нет обработанных заказов с истекшим сроком");		 
 	}
 	else {
 		System.out.println("________________________");	
-		System.out.println("Обработанные заказы с истекшим сроком");		
+		System.out.println("Обработанные заказы с истекшим сроком");	
 		
 			// show deleting orders
 		
@@ -245,14 +249,7 @@ public class Order {
 				
 // Pass 2 - delete
 
-		Set<Map.Entry<Date, Object>> delSet = LimitedObjects.entrySet();
-		for (Object deleteOrder : deleteOrders) {
-			//for (Map.Entry<Date, Object> DelLimOrder : delSet) {
-				//if (DelLimOrder.getValue()==deleteOrder) {
-					//Date delKey = DelLimOrder.getKey();
-					//LimitedObjects.remove(delKey);		
-				//}		
-			//}			
+		for (Object deleteOrder : deleteOrders) {		
 			Orders.remove(deleteOrder);
 		}		
 	}	

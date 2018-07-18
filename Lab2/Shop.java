@@ -5,7 +5,7 @@ public class Shop {
 			System.out.println("Создание покупателей и корзины");	
 			ShoppingCart Cart1 = new ShoppingCart();
 			Credentials customers = new Credentials();
-			customers.AddUser("Ashot","Galustyan","Vaganych","armen@mail.am");
+			customers.AddUser("Ashot","Galustyan","Vaganych","armen@mail.am"); //Важно: HashSet сортирует массив по алфавиту
 			customers.AddUser("Stas","Hrenov","Petrovich","hrenoff@mail.ru");
 			customers.AddUser("Ivan","Rasputin","Nikolaevich","ivrs@gmail.com");
 			Cart1.add("phone","2","Хсяомя","3500","Джамшут дистрибутив","Хсяомя Хэ","Ведроид 2.0","Классический","резерв");
@@ -35,6 +35,7 @@ public class Shop {
 			order.Buy(Cart3, customers, 2);	
 			order.handle();
 			order.checkLimitation();
+			System.out.println("________________________");	
 			System.out.println("Итоговый заказ");
 			order.show();
 	}
