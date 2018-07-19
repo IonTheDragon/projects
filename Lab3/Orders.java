@@ -1,24 +1,23 @@
 import java.util.Date;
 import java.util.*;
 
-public class Orders<T> {	
+public class Orders<T extends Order> {	
 
 	List<T> OrdersList = new LinkedList<>();
-	Map<Date, List<? extends Object>> LimitedItems = new HashMap<>();	
+	Map<Date, List<? extends T>> LimitedItems = new HashMap<>();	
 
 	public void Buy(T m_order) {
-		Order lim_order = (Order)m_order;
-		List<Object> lim_orders = new LinkedList<>();
+		List<T> lim_orders = new LinkedList<>();
 		this.OrdersList.add(m_order);
-		lim_orders.add(lim_order);
-		this.LimitedItems.put(lim_order.CreationTime, lim_orders);	//запись текущего заказа с временем в список временного хранения	
+		lim_orders.add(m_order);
+		this.LimitedItems.put(m_order.CreationTime, lim_orders);	//запись текущего заказа с временем в список временного хранения	
 	}
 	
-	public void show(List<Object> m_OrdersList) {
+	public void show(List<T> m_OrdersList) {
 			 
 	for (int i = 0; i < m_OrdersList.size(); i++) {
 		System.out.println("________________________");	
-		Order m_order = (Order)m_OrdersList.get(i);
+		Order m_order = m_OrdersList.get(i);
 		ArrayList<Device> m_PurchasingItemsList = m_order.PurchasingItemsList;
 		for (int j = 0; j < m_PurchasingItemsList.size(); j++) {
 			if (m_PurchasingItemsList.get(j).getClass().getSimpleName()=="Phone") {
@@ -76,7 +75,7 @@ public class Orders<T> {
 	public void checkLimitation() { 
 	System.out.println("Проверка заказа");
  // Pass 1 - collect delete candidates		
-	List<Object> deleteOrders = new LinkedList<>();	
+	List<T> deleteOrders = new LinkedList<>();	
 	Date CurrentTime = new Date();
 	long CurrentTimeMls = CurrentTime.getTime();		
 	long pastTime = 0;
@@ -85,7 +84,7 @@ public class Orders<T> {
 	// Получаем набор элементов
 	
 	for(Date date : LimitedItems.keySet()){
-		for (Object item : LimitedItems.get(date)){	
+		for (T item : LimitedItems.get(date)){	
 			Order currentItem = (Order)item;
 			pastTime=CurrentTimeMls-currentItem.WaitingTime;
 			status = currentItem.Status;	

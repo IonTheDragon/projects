@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class ShoppingCart<T> {
+public class ShoppingCart<T extends Device> {
  ArrayList<T> ShoppingCartList = new ArrayList<>();
  
  public void add(T m_item) {
@@ -24,7 +24,7 @@ public class ShoppingCart<T> {
 	 }
  } 
  
- public void show(List<Device> m_ShoppingCartList) {
+ public void show(List<T> m_ShoppingCartList) {
 	    
 	System.out.println("________________________");	
 	for (int i = 0; i < m_ShoppingCartList.size(); i++) {
@@ -51,11 +51,11 @@ public class ShoppingCart<T> {
 	}	
   }
   
-  public UUID readId(List<Device> m_ShoppingCartList, int i) {
+  public UUID readId(List<T> m_ShoppingCartList, int i) {
 	 return m_ShoppingCartList.get(i).GetId(); 
   }
   
-  public void search(List<Device> m_ShoppingCartList, UUID m_id) {
+  public void search(List<T> m_ShoppingCartList, UUID m_id) {
 	int is_found = 0;
 	for (int i = 0; i < m_ShoppingCartList.size(); i++) {
 		

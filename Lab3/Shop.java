@@ -6,7 +6,7 @@ public class Shop {
 			ShoppingCart Cart1 = new ShoppingCart<Device>();
 			Credentials customers = new Credentials();
 			customers.AddUser("Ashot","Galustyan","Vaganych","armen@mail.am"); 
-			customers.AddUser("Stas","Hrenov","Petrovich","hrenoff@mail.ru");
+			customers.AddUser("Stas","Hrenov","Petrovich","hrenoff@mail.ru");  //HashSet сортирует по алфавиту, т.е. Иван будет вторым
 			customers.AddUser("Ivan","Rasputin","Nikolaevich","ivrs@gmail.com");
 			Phone ph1 = new Phone("2","Хсяомя","3500","Джамшут дистрибутив","Хсяомя Хэ","Ведроид 2.0","Классический","резерв");
 			SmartPhone sph1 = new SmartPhone("1","Унитазофон","25000","Индус-прошивка","Унитазофон 2018","Шишдовз визда","Обычная","2");
