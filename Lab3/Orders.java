@@ -85,7 +85,7 @@ public class Orders<T extends Order> {
 	
 	for(Date date : LimitedItems.keySet()){
 		for (T item : LimitedItems.get(date)){	
-			Order currentItem = (Order)item;
+			Order currentItem = item;
 			pastTime=CurrentTimeMls-currentItem.WaitingTime;
 			status = currentItem.Status;	
 			if (date.getTime()<=pastTime) {	
