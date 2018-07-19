@@ -32,44 +32,32 @@ public class ShoppingCart {
  } 
  
  public void show() { 
- 	 	 
-	Object[][] data = new Object[10][ShoppingCartList.size()];	 
-	for (int i = 0; i < ShoppingCartList.size(); i++) {
-		data[0][i] = ShoppingCartList.get(i).GetDeviceType();
-		data[1][i] = ShoppingCartList.get(i).GetId().toString();
-		data[2][i] = ShoppingCartList.get(i).GetCount();
-		data[3][i] = ShoppingCartList.get(i).GetName();
-		data[4][i] = ShoppingCartList.get(i).GetPrice();
-		data[5][i] = ShoppingCartList.get(i).GetCompany();
-		data[6][i] = ShoppingCartList.get(i).GetModel();
-		data[7][i] = ShoppingCartList.get(i).GetOs();
-		data[8][i] = ShoppingCartList.get(i).GetParam1();
-		data[9][i] = ShoppingCartList.get(i).GetParam2();	
-	}  
+ 	 	 	   
 	System.out.println("________________________");	
 	for (int i = 0; i < ShoppingCartList.size(); i++) {
-		System.out.println("Идентификатор: "+data[1][i]);
-		System.out.println("Тип устройства: "+data[0][i]);
-		System.out.println("Количество: "+data[2][i]);
-		System.out.println("Название: "+data[3][i]);
-		System.out.println("Цена: "+data[4][i]);
-		System.out.println("Изготовитель: "+data[5][i]);
-		System.out.println("Модель: "+data[6][i]);
-		System.out.println("ОС: "+data[7][i]);
+		System.out.println("Идентификатор: "+ShoppingCartList.get(i).GetId().toString());
+		System.out.println("Тип устройства: "+ShoppingCartList.get(i).GetDeviceType());
+		System.out.println("Количество: "+ShoppingCartList.get(i).GetCount());
+		System.out.println("Название: "+ShoppingCartList.get(i).GetName());
+		System.out.println("Цена: "+ShoppingCartList.get(i).GetPrice());
+		System.out.println("Изготовитель: "+ShoppingCartList.get(i).GetCompany());
+		System.out.println("Модель: "+ShoppingCartList.get(i).GetModel());
+		System.out.println("ОС: "+ShoppingCartList.get(i).GetOs());
 		if ("Phone".equalsIgnoreCase(ShoppingCartList.get(i).GetDeviceType())) {
-			System.out.println("Тип корпуса: "+data[8][i]);
+			System.out.println("Тип корпуса: "+ShoppingCartList.get(i).GetParam1());
 		}
 		else if ("Smartphone".equalsIgnoreCase(ShoppingCartList.get(i).GetDeviceType())) {
-			System.out.println("Тип SIM-карты: "+data[8][i]);
-			System.out.println("Число SIM-карт: "+data[9][i]);
+			System.out.println("Тип SIM-карты: "+ShoppingCartList.get(i).GetParam1());
+			System.out.println("Число SIM-карт: "+ShoppingCartList.get(i).GetParam2());
 		}
 		else if ("Book".equalsIgnoreCase(ShoppingCartList.get(i).GetDeviceType())) {
-			System.out.println("Процессор: "+data[8][i]);
-			System.out.println("Разрешение экрана: "+data[9][i]);			
+			System.out.println("Процессор: "+ShoppingCartList.get(i).GetParam1());
+			System.out.println("Разрешение экрана: "+ShoppingCartList.get(i).GetParam2());			
 		}
 		System.out.println("________________________");
 	}	
   }
+  
   public UUID readId(int i) {
 	 return ShoppingCartList.get(i).GetId(); 
   }
