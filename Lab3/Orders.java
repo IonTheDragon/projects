@@ -17,7 +17,7 @@ public class Orders<T extends Order> {
 			 
 	for (int i = 0; i < m_OrdersList.size(); i++) {
 		System.out.println("________________________");	
-		Order m_order = m_OrdersList.get(i);
+		T m_order = m_OrdersList.get(i);
 		ArrayList<Device> m_PurchasingItemsList = m_order.PurchasingItemsList;
 		for (int j = 0; j < m_PurchasingItemsList.size(); j++) {
 			if (m_PurchasingItemsList.get(j).getClass().getSimpleName()=="Phone") {
