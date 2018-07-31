@@ -19,6 +19,7 @@ abstract public class ACheck implements Runnable {
 	@Override
 	public void run()
 	{
+		//synchronized(orders){
 		try{
 		if ("Auto".equalsIgnoreCase(mode)) {
 			System.out.println("Начало проверки заказов");
@@ -59,7 +60,8 @@ abstract public class ACheck implements Runnable {
 		catch(InterruptedException e){
 			System.out.println("Thread has been interrupted");
 		}
-		System.out.println("Конец проверки");		
+		System.out.println("Конец проверки");
+		//}		
 	}	
 	
 }

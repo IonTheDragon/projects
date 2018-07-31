@@ -6,6 +6,7 @@ public class DeleteValidatedOrders extends ACheck{
 	}
 	@Override
 	public void run() {
+		//synchronized(orders){
 		try{
 		if ("Auto".equalsIgnoreCase(mode)) {
 			System.out.println("Начало очистки списка заказов");
@@ -41,5 +42,6 @@ public class DeleteValidatedOrders extends ACheck{
 			System.out.println("Thread has been interrupted");
 		}
 		System.out.println("Конец проверки");
+		//}
 	}
 }

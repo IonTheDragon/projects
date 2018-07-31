@@ -36,32 +36,32 @@ public class Shop {
 			Order ThirdOrder = new Order(Cart3, customers, 2);			
 			orders.Buy(ThirdOrder);
 			
-			ProcessingOrders ProcOrders = new ProcessingOrders(10000,15000,5000,5,5,orders,"Auto");
-			Thread t1 = new Thread(ProcOrders);
-			Thread t2 = new Thread(ProcOrders.GenThread);
-			Thread t3 = new Thread(ProcOrders.ValThread);
-			Thread t4 = new Thread(ProcOrders.DelThread);
+			GenerateOrders GenThread = new GenerateOrders(5000,orders);
+			Validate ValThread = new Validate(10000,5,orders,"Auto");
+			DeleteValidatedOrders DelThread = new DeleteValidatedOrders(15000,3,orders,"Auto");
+			Thread t1 = new Thread(GenThread);
+			Thread t2 = new Thread(ValThread);
+			Thread t3 = new Thread(DelThread);
 			t1.start();
 			t2.start();
 			t3.start();
-			t4.start();
 			
-			ProcOrders.orders.show();
+			orders.show();
 			System.out.println("Ждем 7 сек");
 			System.out.println("__________________");
 			Thread.sleep(7000);	
-			ProcOrders.orders.show();
+			orders.show();
 			System.out.println("Ждем 5 сек");
 			System.out.println("__________________");
 			Thread.sleep(5000);	
-			ProcOrders.orders.show();
+			orders.show();
 			System.out.println("Ждем 10 сек");
 			System.out.println("__________________");
 			Thread.sleep(10000);	
-			ProcOrders.orders.show();	
+			orders.show();	
 			System.out.println("Ждем 10 сек");
 			System.out.println("__________________");
 			Thread.sleep(10000);	
-			ProcOrders.orders.show();									
+			orders.show();									
 	}
 }

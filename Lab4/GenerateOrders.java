@@ -2,7 +2,7 @@ import java.util.*;
 
 public class GenerateOrders implements Runnable {
 	int Time;
-	List<Order> OutputList = new LinkedList<>();
+	Orders orders;
 	Credentials customers = new Credentials();
 	ShoppingCart Cart1 = new ShoppingCart<Device>();
 	ShoppingCart Cart2 = new ShoppingCart<Device>();
@@ -17,43 +17,43 @@ public class GenerateOrders implements Runnable {
 	Book bk3 = new Book("5","СЕКРЕТНО","СЕКРЕТНО","СЕКРЕТНО","СЕКРЕТНО","СЕКРЕТНО","СЕКРЕТНО","СЕКРЕТНО");
 	Phone ph4 = new Phone("1","МОНОЛИТ","350000","Циклура","УДАЛЕНО","УДАЛЕНО","Классический","резерв");
 	SmartPhone sph4 = new SmartPhone("1","Артемида","600000","УДАЛЕНО","Артемида УДАЛЕНО","УДАЛЕНО","Обычная","УДАЛЕНО");
-	Book bk4 = new Book("1","Прототип 33460","500000","Циклура","33460 2018","СЕКРЕТНО","СЕКРЕТНО","4000х4000");
-	//Thread thread;			
+	Book bk4 = new Book("1","Прототип 33460","500000","Циклура","33460 2018","СЕКРЕТНО","СЕКРЕТНО","4000х4000");			
 	
-	GenerateOrders(int m_time) {
+	GenerateOrders(int m_time, Orders m_orders) {
 		customers.AddUser("Katya","Iwanova","Petrovna","katya@gmail.com");
 		customers.AddUser("Ivan","Voznyuk","Vyacheslavovich","ivan@stonejungle.org");
 		customers.AddUser("Ivan","Hromov","Stepanovich","СЕКРЕТНО");
 		customers.AddUser("Janna","Rasputin","Michailovna","janna@gmail.com");		
-		//thread = new Thread(this, "Поток генерации заказов");
-		//thread.start();
+		this.orders = m_orders;
 											
 		Time = m_time;
 	}
 	@Override
 	public void run() {	
+	 //synchronized(orders){
 	 try{
 			Thread.sleep(Time);
 			Cart1.add(ph1);
 			Cart1.add(sph1);
 			Cart1.add(bk1);
-			this.OutputList.add(new Order(Cart1,customers,0));			
+			this.orders.Buy(new Order(Cart1,customers,0));			
 			Thread.sleep(Time);
 			Cart2.add(ph2);
 			Cart2.add(bk2);
-			this.OutputList.add(new Order(Cart2,customers,1));
+			this.orders.Buy(new Order(Cart2,customers,1));
 			Thread.sleep(Time);	
 			Cart3.add(ph3);
 			Cart3.add(bk3);
-			this.OutputList.add(new Order(Cart3,customers,2));
+			this.orders.Buy(new Order(Cart3,customers,2));
 			Thread.sleep(Time);
 			Cart4.add(ph4);
 			Cart4.add(sph4);
 			Cart4.add(bk4);	
-			this.OutputList.add(new Order(Cart4,customers,3));				
+			this.orders.Buy(new Order(Cart4,customers,3));				
 	 }
 	 catch(InterruptedException e){
 		System.out.println("Thread has been interrupted");
-	 }	 
+	 }
+	//}	 
 	}	
 }
