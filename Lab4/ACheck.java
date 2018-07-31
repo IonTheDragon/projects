@@ -5,15 +5,12 @@ abstract public class ACheck implements Runnable {
 	int count;
 	Orders orders;
 	String mode;
-	//Thread thread;
 	
 	ACheck(int m_time, int m_count, Orders m_orders, String m_mode) {
 		this.Time = m_time;
 		this.count = m_count;
 		this.orders = m_orders;
 		this.mode = m_mode;
-		//thread = new Thread(this, "Поток заказов");
-		//thread.start();
 	}
 	
 	@Override
@@ -41,11 +38,11 @@ abstract public class ACheck implements Runnable {
 		}
 		else if ("Manual".equalsIgnoreCase(mode)) {
 			List<Order> UpdatedOrdersList = new LinkedList<>();
-			List<Order> OrdersList = orders.OrdersList;	
+			List<Order> m_ordersList = orders.OrdersList;	
 			Thread.sleep(100);
 						
-			for(int j = 0; j < OrdersList.size(); j++){
-				Order order = OrdersList.get(j);		
+			for(int j = 0; j < m_ordersList.size(); j++){
+				Order order = m_ordersList.get(j);		
 				if ("Ожидание".equalsIgnoreCase(order.Status)) {
 					order.Status = "Обработан";										
 				}
