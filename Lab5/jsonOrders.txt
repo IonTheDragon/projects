@@ -1,0 +1,148 @@
+<user>
+<userId>a8034ea5-bfc8-4be1-8548-cad70e1963c5</userId>
+<FirstName>Ashot</FirstName>
+<SecondName>Galustyan</SecondName>
+<FatherName>Vaganych</FatherName>
+<mail>armen@mail.am</mail>
+</user>
+<device>
+<itemId>a4293627-a4e5-414e-9edc-af63d6af869d</itemId>
+<Type>Phone</Type>
+<count>2</count>
+<itemName>Хсяомя</itemName>
+<price>3500</price>
+<company>Джамшут дистрибутив</company>
+<model>Хсяомя Хэ</model>
+<system>Ведроид 2.0</system>
+<hull>Классический</hull>
+</device>
+<device>
+<itemId>84e88784-fadd-4f16-96c6-b859c6301c78</itemId>
+<Type>Smartphone</Type>
+<count>1</count>
+<itemName>Унитазофон</itemName>
+<price>25000</price>
+<company>Индус-прошивка</company>
+<model>Унитазофон 2018</model>
+<system>Шишдовз визда</system>
+<simType>Обычная</simType>
+<simCount>2</simCount>
+</device>
+<device>
+<itemId>54b63007-3d1e-43c1-95c2-748cc9e3904c</itemId>
+<Type>Book</Type>
+<count>1</count>
+<itemName>ПакетБука</itemName>
+<price>33000</price>
+<company>Гараж Васяна</company>
+<model>Планшет 3000 элитный</model>
+<system>Макось с таблэткой</system>
+<processor>Пенек</processor>
+<resolution>900х1200</resolution>
+</device>
+</order>
+<user>
+<userId>5d14fcb0-7a7b-4d3d-84ae-b8ce08f72493</userId>
+<FirstName>Ivan</FirstName>
+<SecondName>Rasputin</SecondName>
+<FatherName>Nikolaevich</FatherName>
+<mail>ivrs@gmail.com</mail>
+</user>
+<device>
+<itemId>45e339d4-708a-4cf3-8626-5be920436700</itemId>
+<Type>Phone</Type>
+<count>2</count>
+<itemName>Nokia</itemName>
+<price>15000</price>
+<company>Nokia</company>
+<model>Nokia 777</model>
+<system>Android</system>
+<hull>Классический</hull>
+</device>
+<device>
+<itemId>d39b3a93-b917-4948-a1e2-f4fe7984ff6f</itemId>
+<Type>Book</Type>
+<count>2</count>
+<itemName>NovaBook</itemName>
+<price>25000</price>
+<company>Green Gecko</company>
+<model>Nova 18</model>
+<system>GeckOS</system>
+<processor>Intel</processor>
+<resolution>900х1200</resolution>
+</device>
+</order>
+<user>
+<userId>21dad7a2-3d03-4846-b1e8-64c6a78cb025</userId>
+<FirstName>Stas</FirstName>
+<SecondName>Hrenov</SecondName>
+<FatherName>Petrovich</FatherName>
+<mail>hrenoff@mail.ru</mail>
+</user>
+<device>
+<itemId>62c712d9-0626-403e-a41c-7d9a5731d6a5</itemId>
+<Type>Phone</Type>
+<count>1</count>
+<itemName>Nokia</itemName>
+<price>10000</price>
+<company>Nokia</company>
+<model>Nokia 15</model>
+<system>Android</system>
+<hull>Раскладушка</hull>
+</device>
+<device>
+<itemId>2ef88a46-5ae4-454b-aae9-171359e5464c</itemId>
+<Type>Smartphone</Type>
+<count>1</count>
+<itemName>IPhone</itemName>
+<price>55000</price>
+<company>Apple</company>
+<model>IPhone X</model>
+<system>MacOS</system>
+<simType>Multi-Sim</simType>
+<simCount>2</simCount>
+</device>
+</order>
+<user>
+<userId>816ff18a-3a8e-4998-bacb-6e7e75da692e</userId>
+<FirstName>Katya</FirstName>
+<SecondName>Iwanova</SecondName>
+<FatherName>Petrovna</FatherName>
+<mail>katya@gmail.com</mail>
+</user>
+<device>
+<itemId>d43d77df-2344-4fea-a388-0c2a1cd07f9c</itemId>
+<Type>Phone</Type>
+<count>2</count>
+<itemName>Бревнофон</itemName>
+<price>300</price>
+<company>Икея</company>
+<model>Бревнофон 3000</model>
+<system>Бревноид 1.1</system>
+<hull>Классический</hull>
+</device>
+<device>
+<itemId>fed25240-4c8d-4f77-bd9b-b1a8dbcfe889</itemId>
+<Type>Smartphone</Type>
+<count>1</count>
+<itemName>Унитазофон</itemName>
+<price>24000</price>
+<company>Индус-прошивка</company>
+<model>Унитазофон 2017</model>
+<system>Шишдовз визда</system>
+<simType>Обычная</simType>
+<simCount>1</simCount>
+</device>
+<device>
+<itemId>19b7d2d2-093d-404c-8cf1-5124fde90e1b</itemId>
+<Type>Book</Type>
+<count>1</count>
+<itemName>Доска деревянная</itemName>
+<price>50</price>
+<company>Димон ик</company>
+<model>Доска 2018</model>
+<system>Скоро будет</system>
+<processor>Доска на пеньке</processor>
+<resolution>900х1200</resolution>
+</device>
+</order>

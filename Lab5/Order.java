@@ -17,5 +17,9 @@ public class Order {
 		OurUser = UsersArray[Customer];		
 	}		
 	
+	Order() {
+		Status = "Empty Order";
+	}
+	
 }
 			

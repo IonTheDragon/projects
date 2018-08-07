@@ -4,6 +4,8 @@ public class Shop {
 	public static void main (String args[])  throws InterruptedException  {
 			System.out.println("Создание покупателей и корзины");	
 			Orders orders = new Orders<Order>();
+			ManagerOrderFile mfile = new ManagerOrderFile("StoredOrders.csv");
+			ManagerOrderJSON jfile = new ManagerOrderJSON("jsonOrders.txt");
 			
 			Credentials customers = new Credentials();
 			customers.AddUser("Ashot","Galustyan","Vaganych","armen@mail.am"); 
@@ -51,6 +53,8 @@ public class Shop {
 			System.out.println("__________________");
 			Thread.sleep(7000);	
 			orders.show();
+			mfile.saveAll(orders);
+			jfile.saveAll(orders);
 			System.out.println("Ждем 5 сек");
 			System.out.println("__________________");
 			Thread.sleep(5000);	
@@ -62,6 +66,10 @@ public class Shop {
 			System.out.println("Ждем 10 сек");
 			System.out.println("__________________");
 			Thread.sleep(10000);	
-			orders.show();									
+			orders.show();		
+			System.out.println("вывод csv данных");			
+			mfile.readAll();
+			System.out.println("вывод json данных");
+			jfile.readAll();							
 	}
 }

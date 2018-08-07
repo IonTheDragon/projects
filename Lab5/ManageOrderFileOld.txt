@@ -1,0 +1,165 @@
+import java.util.*;
+import java.io.*;
+
+public class ManagerOrderFile extends AManageOrder {
+	ManagerOrderFile(String m_path){
+		super(m_path);
+	}
+	
+	public void readById(UUID m_id){
+		
+	  StringBuilder data = new StringBuilder();
+      try {
+         FileReader reader = new FileReader(new File(path));
+		int ch;
+		while ((ch = reader.read()) != -1) {
+			data.append((char)ch);
+		}
+			reader.close();
+			
+			StringBuilder CurrentData = new StringBuilder();
+			CurrentData.append(",,,,,,,,,,");
+			int firstindex = data.lastIndexOf(m_id.toString());
+			int lastindex = data.indexOf(",,,,,,,,,,",firstindex);
+			for (int i = firstindex; i < lastindex; i++) {
+				char m_ch = data.charAt(i);
+				CurrentData.append(m_ch);
+			}
+			System.out.print(CurrentData);
+      }
+      catch(IOException e) {
+		e.printStackTrace();
+	  }	 
+	  		
+	}
+
+	public void saveById(Orders m_orders, UUID m_id){
+
+		File m_file = new File(path);
+		try {
+			BufferedWriter writer = new BufferedWriter(new FileWriter(m_file,true));
+			StringBuilder data = new StringBuilder();
+			
+			Order m_order = this.getOrderById(m_orders, m_id);
+			ArrayList<Device> m_PurchasingItemsList = m_order.PurchasingItemsList;
+			String str = StrToBin("Id покупателя,Имя,Фамилия,Отчество,Почта,Статус заказа/n");
+			writer.write(str);
+			User user = m_order.OurUser;
+			str = StrToBin(user.id.toString()+"/n"+user.Name+"/n"+user.Sname+"/n"+user.FatherName+"/n"+user.Mail+"/n"+m_order.Status+"/n");
+			writer.write(str);
+			
+			//
+			for (int j = 0; j < m_PurchasingItemsList.size(); j++) {
+			 str = StrToBin("Id устройства,Тип устройства,Количество,Название,Цена,Изготовитель,Модель,ОС,корпус/карта/процессор,число карт/разрешение/n");			
+			 writer.write(str);								
+			 if (m_PurchasingItemsList.get(j).getClass().getSimpleName()=="Phone") {
+				 Phone phone = (Phone)m_PurchasingItemsList.get(j);
+				 str = StrToBin(phone.GetId().toString()+"/nPhone/n"+phone.GetCount()+"/n"+phone.GetName()+"/n"+phone.GetPrice()+"/n"+phone.GetCompany()+"/n"+phone.GetModel()+"/n"+phone.GetOs()+"/n"+phone.GetParam1()+"/n");
+				 writer.write(str);		
+			 }
+			 else if (m_PurchasingItemsList.get(j).getClass().getSimpleName()=="SmartPhone") {
+			 	 SmartPhone smphone = (SmartPhone)m_PurchasingItemsList.get(j);
+				 str = StrToBin(smphone.GetId().toString()+"/nSmartphone/n"+smphone.GetCount()+"/n"+smphone.GetName()+"/n"+smphone.GetPrice()+"/n"+smphone.GetCompany()+"/n"+smphone.GetModel()+"/n"+smphone.GetOs()+"/n"+smphone.GetParam1()+"/n"+smphone.GetParam2()+"/n");
+				 writer.write(str);		
+			 }  
+			 else if  (m_PurchasingItemsList.get(j).getClass().getSimpleName()=="Book") {
+				 Book book = (Book)m_PurchasingItemsList.get(j);
+				 str = StrToBin(book.GetId().toString()+"/nBook/n"+book.GetCount()+"/n"+book.GetName()+"/n"+book.GetPrice()+"/n"+book.GetCompany()+"/n"+book.GetModel()+"/n"+book.GetOs()+"/n"+book.GetParam1()+"/n"+book.GetParam2()+"/n");
+				 writer.write(str);
+			 }	
+			}		
+			//
+			writer.flush();
+			writer.close();
+		}
+		catch(IOException e) {
+			e.printStackTrace();
+		}	
+	}
+	
+	public void readAll(){
+	  
+      try {
+         FileReader reader = new FileReader(new File(path));
+		int ch;
+		while ((ch = reader.read()) != -1) {
+			System.out.print((char)ch);
+		}
+			reader.close();
+      }
+      catch(IOException e) {
+		e.printStackTrace();
+	  }	     
+	   	
+	}
+	
+	public void saveAll(Orders m_orders){
+	
+		File m_file = new File(path);
+		try {
+			BufferedWriter writer = new BufferedWriter(new FileWriter(m_file,true));
+			StringBuilder data = new StringBuilder();
+			for (int i = 0; i < m_orders.OrdersList.size(); i++) {
+
+				Order m_order = (Order)m_orders.OrdersList.get(i);
+				ArrayList<Device> m_PurchasingItemsList = m_order.PurchasingItemsList;
+				
+				String str = StrToBin("Id покупателя,Имя,Фамилия,Отчество,Почта,Статус заказа/n");
+				writer.write(str);
+				User user = m_order.OurUser;
+				str = StrToBin(user.id.toString()+"/n"+user.Name+"/n"+user.Sname+"/n"+user.FatherName+"/n"+user.Mail+"/n"+m_order.Status+"/n");
+				writer.write(str);
+			
+				//
+				for (int j = 0; j < m_PurchasingItemsList.size(); j++) {
+				 str = StrToBin("Id устройства,Тип устройства,Количество,Название,Цена,Изготовитель,Модель,ОС,корпус/карта/процессор,число карт/разрешение/n");			
+				 writer.write(str);									
+				 if (m_PurchasingItemsList.get(j).getClass().getSimpleName()=="Phone") {
+					Phone phone = (Phone)m_PurchasingItemsList.get(j);
+					str = StrToBin(phone.GetId().toString()+"/nPhone/n"+phone.GetCount()+"/n"+phone.GetName()+"/n"+phone.GetPrice()+"/n"+phone.GetCompany()+"/n"+phone.GetModel()+"/n"+phone.GetOs()+"/n"+phone.GetParam1()+"/n");
+					writer.write(str);		
+				 }
+				 else if (m_PurchasingItemsList.get(j).getClass().getSimpleName()=="SmartPhone") {
+					SmartPhone smphone = (SmartPhone)m_PurchasingItemsList.get(j);
+					str = StrToBin(smphone.GetId().toString()+"/nSmartphone/n"+smphone.GetCount()+"/n"+smphone.GetName()+"/n"+smphone.GetPrice()+"/n"+smphone.GetCompany()+"/n"+smphone.GetModel()+"/n"+smphone.GetOs()+"/n"+smphone.GetParam1()+"/n"+smphone.GetParam2()+"/n");
+					writer.write(str);		
+				 }  
+				 else if  (m_PurchasingItemsList.get(j).getClass().getSimpleName()=="Book") {
+					Book book = (Book)m_PurchasingItemsList.get(j);
+					str = StrToBin(book.GetId().toString()+"/nBook/n"+book.GetCount()+"/n"+book.GetName()+"/n"+book.GetPrice()+"/n"+book.GetCompany()+"/n"+book.GetModel()+"/n"+book.GetOs()+"/n"+book.GetParam1()+"/n"+book.GetParam2()+"/n");
+					writer.write(str);
+				 }	
+				}		
+				//		
+			}
+			writer.flush();
+			writer.close();
+		}
+		catch(IOException e) {
+			e.printStackTrace();
+		}	
+	
+	}
+	
+	public String StrToBin(String str) {
+	 String data = "";	
+	 try {
+		byte[] bytes = str.getBytes("UTF-8");
+		StringBuilder binary = new StringBuilder();
+		for (byte b : bytes)
+		{
+			int val = b;
+			for (int i = 0; i < 8; i++)
+			{
+				binary.append((val & 128) == 0 ? 0 : 1);
+				val <<= 1;
+			}
+			binary.append(' ');
+		}
+		data = binary.toString();	
+	 }
+	 catch(UnsupportedEncodingException e) {
+	 }
+	 return data;
+	}		
+}
