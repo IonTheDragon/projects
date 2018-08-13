@@ -37,6 +37,7 @@ public class ManagerOrderJSON extends AManageOrder  {
         {
             ord = (Order)obj;
             if (ord.OurUser.GetId()==m_id) {
+                System.out.println("__________\n");
                 System.out.println("Заказчик\n");
                 System.out.println("ID: "+ord.OurUser.GetId()+"\n");
                 System.out.println("Имя: "+ord.OurUser.GetName()+"\n");
@@ -45,7 +46,6 @@ public class ManagerOrderJSON extends AManageOrder  {
                 System.out.println("Email: "+ord.OurUser.GetMail()+"\n");
                 System.out.println("__________\n");
 
-                //ArrayList<Device> m_PurchasingItemsList = o.PurchasingItemsList;
                 this.ShowDevices(ord.PurchasingItemsList);
                 break;
             }
@@ -81,7 +81,7 @@ public class ManagerOrderJSON extends AManageOrder  {
     public void readAll(){
 
         StringBuilder data = new StringBuilder();
-        Order ord = new Order();
+        Orders OrdersIn = new Orders();
 
         try
         {
@@ -96,12 +96,12 @@ public class ManagerOrderJSON extends AManageOrder  {
             e.printStackTrace();
         }
 
-        JSONObject DataJsonObject = new JSONObject(data);
-        JSONArray weatherArray = (JSONArray) DataJsonObject.getJSONArray("order");
+        JSONObject DataJsonObject = new JSONObject(data.toString());
+        OrdersIn = (Orders)DataJsonObject.get("order");
 
-        for(Object obj : weatherArray)
+        for(Order ord : OrdersIn.OrdersList)
         {
-            ord = (Order)obj;
+            System.out.println("__________\n");
             System.out.println("Заказчик\n");
             System.out.println("ID: "+ord.OurUser.GetId()+"\n");
             System.out.println("Имя: "+ord.OurUser.GetName()+"\n");

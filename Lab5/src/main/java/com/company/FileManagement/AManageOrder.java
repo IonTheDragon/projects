@@ -158,9 +158,9 @@ abstract public class AManageOrder implements IOrder {
 
     public void ShowDevices(List<Device> m_PurchasingItemsList){
         for (int j = 0; j < m_PurchasingItemsList.size(); j++) {
+            System.out.println("__________\n");
             if (m_PurchasingItemsList.get(j).getClass().getSimpleName().equalsIgnoreCase("Phone")) {
                 Phone phone = (Phone)m_PurchasingItemsList.get(j);
-                //writer.write(phone.GetId().toString()+",Phone,"+phone.GetCount()+","+phone.GetName()+","+phone.GetPrice()+","+phone.GetCompany()+","+phone.GetModel()+","+phone.GetOs()+","+phone.GetParam1()+"\r\n");
                 System.out.println("Тип устройства - телефон\n");
                 System.out.println("ID устройства: "+phone.GetId().toString()+"\n");
                 System.out.println("Количество: "+phone.GetCount()+"\n");
@@ -173,7 +173,6 @@ abstract public class AManageOrder implements IOrder {
             }
             else if (m_PurchasingItemsList.get(j).getClass().getSimpleName().equals("SmartPhone")) {
                 SmartPhone smphone = (SmartPhone)m_PurchasingItemsList.get(j);
-                //writer.write(smphone.GetId().toString()+",Smartphone,"+smphone.GetCount()+","+smphone.GetName()+","+smphone.GetPrice()+","+smphone.GetCompany()+","+smphone.GetModel()+","+smphone.GetOs()+","+smphone.GetParam1()+","+smphone.GetParam2()+"\r\n");
                 System.out.println("Тип устройства - смартфон\n");
                 System.out.println("ID устройства: "+smphone.GetId().toString()+"\n");
                 System.out.println("Количество: "+smphone.GetCount()+"\n");
@@ -187,7 +186,6 @@ abstract public class AManageOrder implements IOrder {
             }
             else if  (m_PurchasingItemsList.get(j).getClass().getSimpleName().equalsIgnoreCase("Book")) {
                 Book book = (Book)m_PurchasingItemsList.get(j);
-                //writer.write(book.GetId().toString()+",Book,"+book.GetCount()+","+book.GetName()+","+book.GetPrice()+","+book.GetCompany()+","+book.GetModel()+","+book.GetOs()+","+book.GetParam1()+","+book.GetParam2()+"\r\n");
                 System.out.println("Тип устройства - планшет\n");
                 System.out.println("ID устройства: "+book.GetId().toString()+"\n");
                 System.out.println("Количество: "+book.GetCount()+"\n");
@@ -200,5 +198,6 @@ abstract public class AManageOrder implements IOrder {
                 System.out.println("Разрешение экрана: "+book.GetParam2()+"\n");
             }
         }
+        System.out.println("__________\n");
     }
 }

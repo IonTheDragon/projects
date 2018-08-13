@@ -11,20 +11,22 @@ public class ManagerOrderFile extends AManageOrder{
 
     public void readById(UUID m_id){
 
-        List<Order> readOrders = new ArrayList<>();
+        Orders OrdersIn = new Orders();
+
         try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream(path)))
         {
-
-            readOrders=Arrays.asList((Order)ois.readObject());
+            OrdersIn = (Orders)ois.readObject();
         }
         catch(Exception ex){
 
             System.out.println(ex.getMessage());
         }
 
-        for(Order ord : readOrders)
+
+        for(Order ord : OrdersIn.OrdersList)
         {
             if (ord.OurUser.GetId()==m_id) {
+                System.out.println("__________\n");
                 System.out.println("Заказчик\n");
                 System.out.println("ID: "+ord.OurUser.GetId()+"\n");
                 System.out.println("Имя: "+ord.OurUser.GetName()+"\n");
@@ -33,7 +35,6 @@ public class ManagerOrderFile extends AManageOrder{
                 System.out.println("Email: "+ord.OurUser.GetMail()+"\n");
                 System.out.println("__________\n");
 
-                //ArrayList<Device> m_PurchasingItemsList = o.PurchasingItemsList;
                 this.ShowDevices(ord.PurchasingItemsList);
                 break;
             }
@@ -43,7 +44,6 @@ public class ManagerOrderFile extends AManageOrder{
 
     public void saveById(Orders m_orders, UUID m_id){
 
-        //File m_file = new File(path);
         Order m_order = this.getOrderById(m_orders, m_id);
 
         try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(path))) {
@@ -61,13 +61,11 @@ public class ManagerOrderFile extends AManageOrder{
 
     public void readAll(){
 
-        List<Order> readOrders = new ArrayList<>();
-        Object OrdersIn;
+        Orders OrdersIn = new Orders();
 
         try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream(path)))
         {
-            OrdersIn = ois.readObject();
-            readOrders = (ArrayList<Order>)OrdersIn;
+            OrdersIn = (Orders)ois.readObject();
         }
         catch(Exception ex){
 
@@ -75,8 +73,9 @@ public class ManagerOrderFile extends AManageOrder{
         }
 
 
-        for(Order ord : readOrders)
+        for(Order ord : OrdersIn.OrdersList)
         {
+            System.out.println("__________\n");
             System.out.println("Заказчик\n");
             System.out.println("ID: "+ord.OurUser.GetId()+"\n");
             System.out.println("Имя: "+ord.OurUser.GetName()+"\n");
@@ -91,7 +90,6 @@ public class ManagerOrderFile extends AManageOrder{
 
     public void saveAll(Orders m_orders){
 
-        //File m_file = new File(path);
         try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(path))) {
             oos.writeObject(m_orders);
         }
