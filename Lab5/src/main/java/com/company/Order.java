@@ -8,7 +8,6 @@ import com.company.Devices.*;
 public class Order implements Serializable {
     public String Status;
     public Date CreationTime;
-    public ShoppingCart PurchasingItems = new ShoppingCart();
     public User OurUser;
     public List<Device> PurchasingItemsList = new ArrayList<>();
 

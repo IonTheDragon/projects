@@ -29,10 +29,7 @@ public class SmartPhone extends Device{
         sim = "";
         simCount = "";
     }
-    public SmartPhone() {
-        super();
-        this.create();
-    }
+
     public String GetParam1(){
         return sim;
     }

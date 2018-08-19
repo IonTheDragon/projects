@@ -48,13 +48,13 @@ abstract public class AManageOrder implements IOrder {
 
         File m_file = new File(path);
         try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(m_file,true));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(m_file,false));
 
             Order m_order = this.getOrderById(m_orders, m_id);
             List<Device> m_PurchasingItemsList = m_order.PurchasingItemsList;
 
             if (m_order.Status.equalsIgnoreCase("Empty Order")) {
-
+                System.out.print("ID не найден");
             }
 
             else {
@@ -105,7 +105,7 @@ abstract public class AManageOrder implements IOrder {
 
         File m_file = new File(path);
         try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(m_file,true));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(m_file,false));
             writer.write("Id устройства,Тип устройства,Количество,Название,Цена,Изготовитель,Модель,ОС,корпус/карта/процессор,число карт/разрешение,Id покупателя,Имя,Фамилия,Отчество,Почта,Статус заказа\r\n");
             for (int i = 0; i < m_orders.OrdersList.size(); i++) {
 
@@ -157,47 +157,28 @@ abstract public class AManageOrder implements IOrder {
     }
 
     public void ShowDevices(List<Device> m_PurchasingItemsList){
-        for (int j = 0; j < m_PurchasingItemsList.size(); j++) {
-            System.out.println("__________\n");
-            if (m_PurchasingItemsList.get(j).getClass().getSimpleName().equalsIgnoreCase("Phone")) {
-                Phone phone = (Phone)m_PurchasingItemsList.get(j);
-                System.out.println("Тип устройства - телефон\n");
-                System.out.println("ID устройства: "+phone.GetId().toString()+"\n");
-                System.out.println("Количество: "+phone.GetCount()+"\n");
-                System.out.println("Название: "+phone.GetName()+"\n");
-                System.out.println("Цена: "+phone.GetPrice()+"\n");
-                System.out.println("Производитель: "+phone.GetCompany()+"\n");
-                System.out.println("Модель: "+phone.GetModel()+"\n");
-                System.out.println("Система: "+phone.GetOs()+"\n");
-                System.out.println("Корпус: "+phone.GetParam1()+"\n");
+        for (int i = 0; i < m_PurchasingItemsList.size(); i++) {
+            System.out.println("__________");
+            System.out.println("Идентификатор: "+m_PurchasingItemsList.get(i).GetId().toString());
+            System.out.println("Тип устройства: "+m_PurchasingItemsList.get(i).GetDeviceType());
+            System.out.println("Количество: "+m_PurchasingItemsList.get(i).GetCount());
+            System.out.println("Название: "+m_PurchasingItemsList.get(i).GetName());
+            System.out.println("Цена: "+m_PurchasingItemsList.get(i).GetPrice());
+            System.out.println("Изготовитель: "+m_PurchasingItemsList.get(i).GetCompany());
+            System.out.println("Модель: "+m_PurchasingItemsList.get(i).GetModel());
+            System.out.println("ОС: "+m_PurchasingItemsList.get(i).GetOs());
+            if ("Phone".equalsIgnoreCase(m_PurchasingItemsList.get(i).GetDeviceType())) {
+                System.out.println("Тип корпуса: "+m_PurchasingItemsList.get(i).GetParam1());
             }
-            else if (m_PurchasingItemsList.get(j).getClass().getSimpleName().equals("SmartPhone")) {
-                SmartPhone smphone = (SmartPhone)m_PurchasingItemsList.get(j);
-                System.out.println("Тип устройства - смартфон\n");
-                System.out.println("ID устройства: "+smphone.GetId().toString()+"\n");
-                System.out.println("Количество: "+smphone.GetCount()+"\n");
-                System.out.println("Название: "+smphone.GetName()+"\n");
-                System.out.println("Цена: "+smphone.GetPrice()+"\n");
-                System.out.println("Производитель: "+smphone.GetCompany()+"\n");
-                System.out.println("Модель: "+smphone.GetModel()+"\n");
-                System.out.println("Система: "+smphone.GetOs()+"\n");
-                System.out.println("Тип SIM-карты: "+smphone.GetParam1()+"\n");
-                System.out.println("Число SIM-карт: "+smphone.GetParam2()+"\n");
+            else if ("Smartphone".equalsIgnoreCase(m_PurchasingItemsList.get(i).GetDeviceType())) {
+                System.out.println("Тип SIM-карты: "+m_PurchasingItemsList.get(i).GetParam1());
+                System.out.println("Число SIM-карт: "+m_PurchasingItemsList.get(i).GetParam2());
             }
-            else if  (m_PurchasingItemsList.get(j).getClass().getSimpleName().equalsIgnoreCase("Book")) {
-                Book book = (Book)m_PurchasingItemsList.get(j);
-                System.out.println("Тип устройства - планшет\n");
-                System.out.println("ID устройства: "+book.GetId().toString()+"\n");
-                System.out.println("Количество: "+book.GetCount()+"\n");
-                System.out.println("Название: "+book.GetName()+"\n");
-                System.out.println("Цена: "+book.GetPrice()+"\n");
-                System.out.println("Производитель: "+book.GetCompany()+"\n");
-                System.out.println("Модель: "+book.GetModel()+"\n");
-                System.out.println("Система: "+book.GetOs()+"\n");
-                System.out.println("Процессор: "+book.GetParam1()+"\n");
-                System.out.println("Разрешение экрана: "+book.GetParam2()+"\n");
+            else if ("Book".equalsIgnoreCase(m_PurchasingItemsList.get(i).GetDeviceType())) {
+                System.out.println("Процессор: "+m_PurchasingItemsList.get(i).GetParam1());
+                System.out.println("Разрешение экрана: "+m_PurchasingItemsList.get(i).GetParam2());
             }
         }
-        System.out.println("__________\n");
+        System.out.println("__________");
     }
 }

@@ -14,7 +14,7 @@ public class GenerateOrders implements Runnable {
     ShoppingCart Cart4 = new ShoppingCart<Device>();
     Phone ph1 = new Phone("2","Бревнофон","300","Икея","Бревнофон 3000","Бревноид 1.1","Классический","резерв");
     SmartPhone sph1 = new SmartPhone("1","Унитазофон","24000","Индус-прошивка","Унитазофон 2017","Шишдовз визда","Обычная","1");
-    Book bk1 = new Book("1","Доска деревянная","50","Димон ик","Доска 2018","Скоро будет","Доска на пеньке","900х1200");
+    Book bk1 = new Book("1","Доска деревянная","50","Димон инк","Доска 2018","Скоро будет","Доска на пеньке","900х1200");
     Phone ph2 = new Phone("3","Nokia","12000","Nokia","Nokia 4","Android","Классический","резерв");
     Book bk2 = new Book("2","NovaBook","55000","Green Gecko","Nova X","GeckOS","CycluraIntegral","900х1200");
     Phone ph3 = new Phone("5","СЕКРЕТНО","СЕКРЕТНО","СЕКРЕТНО","СЕКРЕТНО","СЕКРЕТНО","СЕКРЕТНО","резерв");

@@ -20,7 +20,7 @@ public class Main {
         customers.AddUser("Ivan","Rasputin","Nikolaevich","ivrs@gmail.com");
 
         ShoppingCart Cart1 = new ShoppingCart<Device>();
-        Phone ph1 = new Phone("2","Хсяомя","3500","Джамшут дистрибутив","Хсяомя Хэ","Ведроид 2.0","Классический","резерв");
+        Phone ph1 = new Phone("2","Хсяомя","3500","Джамшут дистрибутив","Хсяомя Хэ","Ведроид 2.0","Классический"," ");
         SmartPhone sph1 = new SmartPhone("1","Унитазофон","25000","Индус-прошивка","Унитазофон 2018","Шишдовз визда","Обычная","2");
         Book bk1 = new Book("1","ПакетБука","33000","Гараж Васяна","Планшет 3000 элитный","Макось с таблэткой","Пенек","900х1200");
         Cart1.add(ph1);
@@ -45,9 +45,9 @@ public class Main {
         Order ThirdOrder = new Order(Cart3, customers, 2);
         orders.Buy(ThirdOrder);
 
-        GenerateOrders GenThread = new GenerateOrders(5000,orders);
-        Validate ValThread = new Validate(10000,5,orders,"Auto");
-        DeleteValidatedOrders DelThread = new DeleteValidatedOrders(15000,3,orders,"Auto");
+        GenerateOrders GenThread = new GenerateOrders(4000,orders);
+        Validate ValThread = new Validate(5000,5,orders,"Auto");
+        DeleteValidatedOrders DelThread = new DeleteValidatedOrders(8000,3,orders,"Auto");
         Thread t1 = new Thread(GenThread);
         Thread t2 = new Thread(ValThread);
         Thread t3 = new Thread(DelThread);
@@ -56,9 +56,9 @@ public class Main {
         t3.start();
 
         orders.show();
-        System.out.println("Ждем 7 сек");
+        System.out.println("Ждем 5 сек");
         System.out.println("__________________");
-        Thread.sleep(7000);
+        Thread.sleep(5000);
         orders.show();
         mfile.saveAll(orders);
         jfile.saveAll(orders);
@@ -67,19 +67,19 @@ public class Main {
         Thread.sleep(5000);
         orders.show();
         cfile.saveAll(orders);
-        System.out.println("Ждем 10 сек");
+        System.out.println("Ждем 5 сек");
         System.out.println("__________________");
-        Thread.sleep(10000);
+        Thread.sleep(5000);
         orders.show();
-        System.out.println("Ждем 10 сек");
+        System.out.println("Ждем 5 сек");
         System.out.println("__________________");
-        Thread.sleep(10000);
+        Thread.sleep(5000);
         orders.show();
         System.out.println("вывод bin данных");
         mfile.readAll();
         System.out.println("вывод json данных");
         jfile.readAll();
-        System.out.println("вывод csv данных");
-        cfile.readAll();
+        //System.out.println("вывод csv данных");
+        //cfile.readAll();
     }
 }

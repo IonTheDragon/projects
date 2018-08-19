@@ -13,16 +13,20 @@ abstract public class Device implements ICrudAction, Serializable {
     String os;
     String param1;
     String param2;
-    public Device(){
-        id = UUID.randomUUID();
-    }
+
     public Device(String m_count, String m_name, String m_price, String m_company, String m_model, String m_os, String m_arg, String m_arg2){
         id = UUID.randomUUID();
         this.update(m_count, m_name, m_price, m_company, m_model, m_os);
         param1 = m_arg;
         param2 = m_arg2;
-        count = m_count;
     }
+    public Device(){
+        id = UUID.randomUUID();
+        this.update("", "", "", "", "", "");
+        param1 = "";
+        param2 = "";
+    }
+
     public String GetName(){
         return name;
     }

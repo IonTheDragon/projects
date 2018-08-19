@@ -20,47 +20,29 @@ public class Orders implements Serializable {
             Order m_order = OrdersList.get(i);
             List<Device> m_PurchasingItemsList = m_order.PurchasingItemsList;
             for (int j = 0; j < m_PurchasingItemsList.size(); j++) {
-                if (m_PurchasingItemsList.get(j).getClass().getSimpleName().equalsIgnoreCase("Phone")) {
-                    Phone phone = (Phone)m_PurchasingItemsList.get(j);
-                    System.out.println("Идентификатор: "+phone.GetId().toString());
-                    System.out.println("Тип устройства: Phone");
-                    System.out.println("Количество: "+phone.GetCount());
-                    System.out.println("Название: "+phone.GetName());
-                    System.out.println("Цена: "+phone.GetPrice());
-                    System.out.println("Изготовитель: "+phone.GetCompany());
-                    System.out.println("Модель: "+phone.GetModel());
-                    System.out.println("ОС: "+phone.GetOs());
-                    System.out.println("Тип корпуса: "+phone.GetParam1());
-                    System.out.println("________________________");
+
+                System.out.println("Идентификатор: "+m_PurchasingItemsList.get(j).GetId().toString());
+                System.out.println("Тип устройства: "+m_PurchasingItemsList.get(j).GetDeviceType());
+                System.out.println("Количество: "+m_PurchasingItemsList.get(j).GetCount());
+                System.out.println("Название: "+m_PurchasingItemsList.get(j).GetName());
+                System.out.println("Цена: "+m_PurchasingItemsList.get(j).GetPrice());
+                System.out.println("Изготовитель: "+m_PurchasingItemsList.get(j).GetCompany());
+                System.out.println("Модель: "+m_PurchasingItemsList.get(j).GetModel());
+                System.out.println("ОС: "+m_PurchasingItemsList.get(j).GetOs());
+                if ("Phone".equalsIgnoreCase(m_PurchasingItemsList.get(j).GetDeviceType())) {
+                    System.out.println("Тип корпуса: "+m_PurchasingItemsList.get(j).GetParam1());
                 }
-                else if (m_PurchasingItemsList.get(j).getClass().getSimpleName().equalsIgnoreCase("Smartphone")) {
-                    SmartPhone smphone = (SmartPhone)m_PurchasingItemsList.get(j);
-                    System.out.println("Идентификатор: "+smphone.GetId().toString());
-                    System.out.println("Тип устройства: Smartphone");
-                    System.out.println("Количество: "+smphone.GetCount());
-                    System.out.println("Название: "+smphone.GetName());
-                    System.out.println("Цена: "+smphone.GetPrice());
-                    System.out.println("Изготовитель: "+smphone.GetCompany());
-                    System.out.println("Модель: "+smphone.GetModel());
-                    System.out.println("ОС: "+smphone.GetOs());
-                    System.out.println("Тип SIM-карты: "+smphone.GetParam1());
-                    System.out.println("Число SIM-карт: "+smphone.GetParam2());
-                    System.out.println("________________________");
+                else if ("Smartphone".equalsIgnoreCase(m_PurchasingItemsList.get(j).GetDeviceType())) {
+                    System.out.println("Тип SIM-карты: "+m_PurchasingItemsList.get(j).GetParam1());
+                    System.out.println("Число SIM-карт: "+m_PurchasingItemsList.get(j).GetParam2());
                 }
-                else if  (m_PurchasingItemsList.get(j).getClass().getSimpleName().equalsIgnoreCase("Book")) {
-                    Book book = (Book)m_PurchasingItemsList.get(j);
-                    System.out.println("Идентификатор: "+book.GetId().toString());
-                    System.out.println("Тип устройства: Book");
-                    System.out.println("Количество: "+book.GetCount());
-                    System.out.println("Название: "+book.GetName());
-                    System.out.println("Цена: "+book.GetPrice());
-                    System.out.println("Изготовитель: "+book.GetCompany());
-                    System.out.println("Модель: "+book.GetModel());
-                    System.out.println("ОС: "+book.GetOs());
-                    System.out.println("Процессор: "+book.GetParam1());
-                    System.out.println("Разрешение экрана: "+book.GetParam2());
-                    System.out.println("________________________");
+                else if ("Book".equalsIgnoreCase(m_PurchasingItemsList.get(j).GetDeviceType())) {
+                    System.out.println("Процессор: "+m_PurchasingItemsList.get(j).GetParam1());
+                    System.out.println("Разрешение экрана: "+m_PurchasingItemsList.get(j).GetParam2());
                 }
+
+                System.out.println("________________________");
+
             }
             System.out.println("Заказчик");
             User user = m_order.OurUser;

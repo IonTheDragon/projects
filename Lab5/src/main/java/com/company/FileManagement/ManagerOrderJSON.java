@@ -2,137 +2,277 @@ package com.company.FileManagement;
 
 import java.util.*;
 import java.io.*;
+
 import com.company.*;
+import com.company.Devices.*;
+import org.json.simple.*;
+import org.json.simple.parser.*;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-public class ManagerOrderJSON extends AManageOrder  {
-    public ManagerOrderJSON (String m_path){
+public class ManagerOrderJSON extends AManageOrder {
+    public ManagerOrderJSON(String m_path) {
         super(m_path);
     }
 
-    public void readById(UUID m_id){
-
-        StringBuilder data = new StringBuilder();
-        Order ord = new Order();
-
-        try
-        {
-            FileReader reader = new FileReader(new File(path));
-            int ch;
-            while ((ch = reader.read()) != -1) {
-                data.append((char) ch);
-            }
-            reader.close();
-        }
-        catch(IOException e){
-            e.printStackTrace();
-        }
-
-        JSONObject DataJsonObject = new JSONObject(data);
-        JSONArray weatherArray = (JSONArray) DataJsonObject.get("order");
-
-        for(Object obj : weatherArray)
-        {
-            ord = (Order)obj;
-            if (ord.OurUser.GetId()==m_id) {
-                System.out.println("__________\n");
-                System.out.println("Заказчик\n");
-                System.out.println("ID: "+ord.OurUser.GetId()+"\n");
-                System.out.println("Имя: "+ord.OurUser.GetName()+"\n");
-                System.out.println("Фамилия: "+ord.OurUser.GetSname()+"\n");
-                System.out.println("Отчество: "+ord.OurUser.GetFatherName()+"\n");
-                System.out.println("Email: "+ord.OurUser.GetMail()+"\n");
-                System.out.println("__________\n");
-
-                this.ShowDevices(ord.PurchasingItemsList);
-                break;
-            }
-        }
-
-    }
-
-    public void saveById(Orders m_orders, UUID m_id){
+    public void readById(UUID m_id) {
 
         File m_file = new File(path);
+        JSONParser parser = new JSONParser();
         try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(m_file, true));
+            JSONArray a = (JSONArray) parser.parse(new FileReader(m_file));
+
+            for (Object o : a) {
+
+                JSONObject jsonorder = (JSONObject) o;
+                String id = (String) jsonorder.get("user_id");
+
+                if (id.equalsIgnoreCase(m_id.toString())) {
+
+                    System.out.println("__________");
+                    System.out.println("Заказчик");
+
+                    System.out.println("ID: " + id);
+
+                    String name = (String) jsonorder.get("user_name");
+                    System.out.println("Имя: " + name);
+
+                    String sname = (String) jsonorder.get("user_secondname");
+                    System.out.println("Фамилия: " + sname);
+
+                    String fname = (String) jsonorder.get("user_fathername");
+                    System.out.println("Отчество: " + fname);
+
+                    String mail = (String) jsonorder.get("user_mail");
+                    System.out.println("Email: " + mail);
+
+                    System.out.println("__________");
+                    JSONArray items = (JSONArray) jsonorder.get("items");
+
+                    for (Object i : items) {
+                        JSONObject jsonitem = (JSONObject) i;
+
+                        String type = (String) jsonitem.get("type");
+                        System.out.println("Тип устройства: " + type);
+
+                        String item_id = (String) jsonitem.get("device_id");
+                        System.out.println("ID устройства: " + item_id);
+
+                        String count = (String) jsonitem.get("count");
+                        System.out.println("Количество: " + count);
+
+                        String iname = (String) jsonitem.get("name");
+                        System.out.println("Название: " + iname);
+
+                        String price = (String) jsonitem.get("price");
+                        System.out.println("Цена: " + price);
+
+                        String company = (String) jsonitem.get("company");
+                        System.out.println("Кампания: " + company);
+
+                        String model = (String) jsonitem.get("model");
+                        System.out.println("Модель: " + model);
+
+                        String os = (String) jsonitem.get("os");
+                        System.out.println("Операционная система: " + os);
+
+                        if ("Phone".equalsIgnoreCase(type)) {
+                            String param1 = (String) jsonitem.get("param1");
+                            System.out.println("Тип корпуса: " + param1);
+                        } else if ("Smartphone".equalsIgnoreCase(type)) {
+                            String param1 = (String) jsonitem.get("param1");
+                            String param2 = (String) jsonitem.get("param2");
+                            System.out.println("Тип SIM-карты: " + param1);
+                            System.out.println("Число SIM-карт: " + param2);
+                        } else if ("Book".equalsIgnoreCase(type)) {
+                            String param1 = (String) jsonitem.get("param1");
+                            String param2 = (String) jsonitem.get("param2");
+                            System.out.println("Процессор: " + param1);
+                            System.out.println("Разрешение экрана: " + param2);
+                        }
+
+                        System.out.println("__________");
+
+                    }
+                    break;
+                }
+            }
+        } catch (FileNotFoundException fe) {
+            fe.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void saveById(Orders m_orders, UUID m_id) {
+
+        try {
+            File m_file = new File(path);
+            JSONArray OrdersArray = new JSONArray();
 
             Order m_order = this.getOrderById(m_orders, m_id);
+            JSONObject UserData = new JSONObject();
+            UserData.put("user_id", m_order.OurUser.GetId().toString());
+            UserData.put("user_name", m_order.OurUser.GetName());
+            UserData.put("user_secondname", m_order.OurUser.GetSname());
+            UserData.put("user_fathername", m_order.OurUser.GetFatherName());
+            UserData.put("user_mail", m_order.OurUser.GetFatherName());
+            JSONArray ItemsArray = new JSONArray();
 
             if (m_order.Status.equalsIgnoreCase("Empty Order")) {
 
+            } else {
+                for (int j = 0; j < m_order.PurchasingItemsList.size(); j++) {
+                    JSONObject ItemParams = new JSONObject();
+                    ItemParams.put("type", m_order.PurchasingItemsList.get(j).GetDeviceType());
+                    ItemParams.put("device_id", m_order.PurchasingItemsList.get(j).GetId().toString());
+                    ItemParams.put("count", m_order.PurchasingItemsList.get(j).GetCount());
+                    ItemParams.put("name", m_order.PurchasingItemsList.get(j).GetName());
+                    ItemParams.put("price", m_order.PurchasingItemsList.get(j).GetPrice());
+                    ItemParams.put("company", m_order.PurchasingItemsList.get(j).GetCompany());
+                    ItemParams.put("model", m_order.PurchasingItemsList.get(j).GetModel());
+                    ItemParams.put("os", m_order.PurchasingItemsList.get(j).GetOs());
+                    ItemParams.put("param1", m_order.PurchasingItemsList.get(j).GetParam1());
+                    ItemParams.put("param2", m_order.PurchasingItemsList.get(j).GetParam2());
+                    ItemsArray.add(ItemParams);
+                }
+                UserData.put("items",ItemsArray);
+                OrdersArray.add(UserData);
             }
-            else {
-                JSONObject jsonObject = new JSONObject();
-                jsonObject.put("order", m_order);
 
-                writer.write(jsonObject.toString());
-            }
-            writer.flush();
+
+            BufferedWriter writer = new BufferedWriter(new FileWriter(m_file, false));
+            writer.write(OrdersArray.toString());
             writer.close();
-        }
-        catch(IOException e) {
+
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public void readAll(){
-
-        StringBuilder data = new StringBuilder();
-        Orders OrdersIn = new Orders();
-
-        try
-        {
-            FileReader reader = new FileReader(new File(path));
-            int ch;
-            while ((ch = reader.read()) != -1) {
-                data.append((char) ch);
-            }
-            reader.close();
-        }
-        catch(IOException e){
-            e.printStackTrace();
-        }
-
-        JSONObject DataJsonObject = new JSONObject(data.toString());
-        OrdersIn = (Orders)DataJsonObject.get("order");
-
-        for(Order ord : OrdersIn.OrdersList)
-        {
-            System.out.println("__________\n");
-            System.out.println("Заказчик\n");
-            System.out.println("ID: "+ord.OurUser.GetId()+"\n");
-            System.out.println("Имя: "+ord.OurUser.GetName()+"\n");
-            System.out.println("Фамилия: "+ord.OurUser.GetSname()+"\n");
-            System.out.println("Отчество: "+ord.OurUser.GetFatherName()+"\n");
-            System.out.println("Email: "+ord.OurUser.GetMail()+"\n");
-            System.out.println("__________\n");
-            this.ShowDevices(ord.PurchasingItemsList);
-        }
-    }
-
-    public void saveAll(Orders m_orders){
-
+    public void readAll() {
         File m_file = new File(path);
-        JSONObject jsonObject = new JSONObject();
+        JSONParser parser = new JSONParser();
+        try {
+            JSONArray a = (JSONArray) parser.parse(new FileReader(m_file));
+
+            for (Object o : a) {
+                JSONObject jsonorder = (JSONObject) o;
+                System.out.println("__________");
+                System.out.println("Заказчик");
+
+                String id = (String) jsonorder.get("user_id");
+                System.out.println("ID: "+id);
+
+                String name = (String) jsonorder.get("user_name");
+                System.out.println("Имя: "+name);
+
+                String sname = (String) jsonorder.get("user_secondname");
+                System.out.println("Фамилия: "+sname);
+
+                String fname = (String) jsonorder.get("user_fathername");
+                System.out.println("Отчество: "+fname);
+
+                String mail = (String) jsonorder.get("user_mail");
+                System.out.println("Email: "+mail);
+
+                System.out.println("__________");
+                JSONArray items = (JSONArray) jsonorder.get("items");
+
+                for (Object i : items) {
+                    JSONObject jsonitem = (JSONObject) i;
+
+                    String type = (String) jsonitem.get("type");
+                    System.out.println("Тип устройства: "+type);
+
+                    String item_id = (String) jsonitem.get("device_id");
+                    System.out.println("ID устройства: "+item_id);
+
+                    String count = (String) jsonitem.get("count");
+                    System.out.println("Количество: "+count);
+
+                    String iname = (String) jsonitem.get("name");
+                    System.out.println("Название: "+iname);
+
+                    String price = (String) jsonitem.get("price");
+                    System.out.println("Цена: "+price);
+
+                    String company = (String) jsonitem.get("company");
+                    System.out.println("Кампания: "+company);
+
+                    String model = (String) jsonitem.get("model");
+                    System.out.println("Модель: "+model);
+
+                    String os = (String) jsonitem.get("os");
+                    System.out.println("Операционная система: "+os);
+
+                    if ("Phone".equalsIgnoreCase(type)) {
+                        String param1 = (String) jsonitem.get("param1");
+                        System.out.println("Тип корпуса: "+param1);
+                    }
+                    else if ("Smartphone".equalsIgnoreCase(type)) {
+                        String param1 = (String) jsonitem.get("param1");
+                        String param2 = (String) jsonitem.get("param2");
+                        System.out.println("Тип SIM-карты: "+param1);
+                        System.out.println("Число SIM-карт: "+param2);
+                    }
+                    else if ("Book".equalsIgnoreCase(type)) {
+                        String param1 = (String) jsonitem.get("param1");
+                        String param2 = (String) jsonitem.get("param2");
+                        System.out.println("Процессор: "+param1);
+                        System.out.println("Разрешение экрана: "+param2);
+                    }
+
+                    System.out.println("__________");
+
+                }
+            }
+        } catch (FileNotFoundException fe) {
+            fe.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void saveAll(Orders m_orders) {
 
         try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(m_file, true));
-            int i = 0;
-            for (Object m_order : m_orders.OrdersList) {
-                if (i==0) jsonObject.put("order", (Order)m_order);
-                else if (i==1) jsonObject.accumulate("order", (Order)m_order);
-                else jsonObject.append("order", (Order)m_order);
-                i++;
+            File m_file = new File(path);
+            JSONArray OrdersArray = new JSONArray();
+
+            for (int i = 0; i < m_orders.OrdersList.size(); i++) {
+                JSONObject UserData = new JSONObject();
+                Order m_order = m_orders.OrdersList.get(i);
+                UserData.put("user_id", m_order.OurUser.GetId().toString());
+                UserData.put("user_name", m_order.OurUser.GetName());
+                UserData.put("user_secondname", m_order.OurUser.GetSname());
+                UserData.put("user_fathername", m_order.OurUser.GetFatherName());
+                UserData.put("user_mail", m_order.OurUser.GetFatherName());
+                JSONArray ItemsArray = new JSONArray();
+
+                for (int j = 0; j < m_order.PurchasingItemsList.size(); j++) {
+                    JSONObject ItemParams = new JSONObject();
+                    ItemParams.put("type", m_order.PurchasingItemsList.get(j).GetDeviceType());
+                    ItemParams.put("device_id", m_order.PurchasingItemsList.get(j).GetId().toString());
+                    ItemParams.put("count", m_order.PurchasingItemsList.get(j).GetCount());
+                    ItemParams.put("name", m_order.PurchasingItemsList.get(j).GetName());
+                    ItemParams.put("price", m_order.PurchasingItemsList.get(j).GetPrice());
+                    ItemParams.put("company", m_order.PurchasingItemsList.get(j).GetCompany());
+                    ItemParams.put("model", m_order.PurchasingItemsList.get(j).GetModel());
+                    ItemParams.put("os", m_order.PurchasingItemsList.get(j).GetOs());
+                    ItemParams.put("param1", m_order.PurchasingItemsList.get(j).GetParam1());
+                    ItemParams.put("param2", m_order.PurchasingItemsList.get(j).GetParam2());
+                    ItemsArray.add(ItemParams);
+                }
+                UserData.put("items",ItemsArray);
+                OrdersArray.add(UserData);
             }
-            writer.write(jsonObject.toString());
-            writer.flush();
+
+            BufferedWriter writer = new BufferedWriter(new FileWriter(m_file, false));
+            writer.write(OrdersArray.toString());
             writer.close();
-        }
-        catch(IOException e) {
+
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
 }

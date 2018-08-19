@@ -26,14 +26,14 @@ public class ManagerOrderFile extends AManageOrder{
         for(Order ord : OrdersIn.OrdersList)
         {
             if (ord.OurUser.GetId()==m_id) {
-                System.out.println("__________\n");
-                System.out.println("Заказчик\n");
-                System.out.println("ID: "+ord.OurUser.GetId()+"\n");
-                System.out.println("Имя: "+ord.OurUser.GetName()+"\n");
-                System.out.println("Фамилия: "+ord.OurUser.GetSname()+"\n");
-                System.out.println("Отчество: "+ord.OurUser.GetFatherName()+"\n");
-                System.out.println("Email: "+ord.OurUser.GetMail()+"\n");
-                System.out.println("__________\n");
+                System.out.println("__________");
+                System.out.println("Заказчик");
+                System.out.println("ID: "+ord.OurUser.GetId());
+                System.out.println("Имя: "+ord.OurUser.GetName());
+                System.out.println("Фамилия: "+ord.OurUser.GetSname());
+                System.out.println("Отчество: "+ord.OurUser.GetFatherName());
+                System.out.println("Email: "+ord.OurUser.GetMail());
+                System.out.println("__________");
 
                 this.ShowDevices(ord.PurchasingItemsList);
                 break;
@@ -75,14 +75,14 @@ public class ManagerOrderFile extends AManageOrder{
 
         for(Order ord : OrdersIn.OrdersList)
         {
-            System.out.println("__________\n");
-            System.out.println("Заказчик\n");
-            System.out.println("ID: "+ord.OurUser.GetId()+"\n");
-            System.out.println("Имя: "+ord.OurUser.GetName()+"\n");
-            System.out.println("Фамилия: "+ord.OurUser.GetSname()+"\n");
-            System.out.println("Отчество: "+ord.OurUser.GetFatherName()+"\n");
-            System.out.println("Email: "+ord.OurUser.GetMail()+"\n");
-            System.out.println("__________\n");
+            System.out.println("__________");
+            System.out.println("Заказчик");
+            System.out.println("ID: "+ord.OurUser.GetId());
+            System.out.println("Имя: "+ord.OurUser.GetName());
+            System.out.println("Фамилия: "+ord.OurUser.GetSname());
+            System.out.println("Отчество: "+ord.OurUser.GetFatherName());
+            System.out.println("Email: "+ord.OurUser.GetMail());
+            System.out.println("__________");
 
             this.ShowDevices(ord.PurchasingItemsList);
         }

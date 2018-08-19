@@ -29,10 +29,7 @@ public class Book extends Device{
         proc = "";
         resolution = "";
     }
-    public Book() {
-        super();
-        this.create();
-    }
+
     public String GetParam1(){
         return proc;
     }

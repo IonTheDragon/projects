@@ -23,10 +23,7 @@ public class Phone extends Device{
         super.delete();
         type = "";
     }
-    public Phone() {
-        super();
-        this.create();
-    }
+
     public String GetParam1(){
         return type;
     }
