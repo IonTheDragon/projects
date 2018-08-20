@@ -10,8 +10,8 @@ public class Main {
     public static void main (String args[])  throws InterruptedException  {
         System.out.println("Создание покупателей и корзины");
         Orders orders = new Orders();
-        ManagerOrderFile mfile = new ManagerOrderFile("BinOrders.txt");
-        ManagerOrderJSON jfile = new ManagerOrderJSON("jsonOrders.txt");
+        ManagerOrderFile mfile = new ManagerOrderFile("BinOrders.bin");
+        ManagerOrderJSON jfile = new ManagerOrderJSON("jsonOrders.json");
         ManagerOrderCSV cfile = new ManagerOrderCSV("csvOrders.csv");
 
         Credentials customers = new Credentials();
