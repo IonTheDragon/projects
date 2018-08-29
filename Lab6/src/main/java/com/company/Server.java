@@ -8,7 +8,7 @@ public class Server {
     public static void main (String args[]) {
 
         Orders ServerOrders = new Orders();
-        Validate ServerVal = new Validate(5000, 5, ServerOrders, 7005, 7020, "127.0.0.1");
+        Validate ServerVal = new Validate(6000, 5, ServerOrders, 7005, 7020, "127.0.0.1");
         Thread thr = new Thread(ServerVal);
         thr.start();
 
@@ -24,6 +24,7 @@ public class Server {
             ServerSocket serverSocket = new ServerSocket(port);
             clientSocket.setSoTimeout(1000);
             clientSocket = serverSocket.accept();
+            System.out.println("TCP клиент создан");
         } catch (Exception e) {
             System.out.println("Ошибка cоздания TCP " + e);
             System.exit(-1);
@@ -32,8 +33,8 @@ public class Server {
         TCPreading ClientReader = new TCPreading(clientSocket, ServerOrders);
 
         //Начать чтение клиента
-        Thread thr1 = new Thread(ClientReader);
-        thr1.start();
+        System.out.println("Чтение TCP порта");
+        ClientReader.read();
 
     }
 }

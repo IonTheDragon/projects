@@ -4,7 +4,7 @@ import java.io.*;
 import java.net.Socket;
 
 
-public class TCPreading implements Runnable {
+public class TCPreading {
 
     Socket clientSocket = null;
 
@@ -13,30 +13,19 @@ public class TCPreading implements Runnable {
 
     Orders ServerOrders;
 
-    @Override
-    public void run() {
-        int i = 0;
+    public void read() {
+        //Читаем поток
+        Order OrderIn = new Order();
         try {
-            while (true) {
-                Thread.sleep(1000);
-                System.out.println("tst"); //проверка, доходит ли программа до этого места
-                if (clientSocket.getInputStream() == null) {
-                    Thread.sleep(5000);
-                    i++;
-                    System.out.println("Нет входящих данных");
-                    if (i == 5) break;
-                } else {
-                    inClientStream = clientSocket.getInputStream();
-                    //Читаем поток
-                    ObjectInputStream reader = new ObjectInputStream(inClientStream);
-                    Order OrderIn = (Order) reader.readObject();
+            inClientStream = clientSocket.getInputStream(); //проходит
+            ObjectInputStream reader = new ObjectInputStream(inClientStream); //проходит
+            while ((OrderIn = (Order)reader.readObject())!=null) { //Читает строку, но не читает объект
                     ServerOrders.Buy(OrderIn);
                     System.out.println("Заказ получен");
-                }
             }
+            //System.out.println("Конец чтения");
         } catch (Exception ex) {
-
-            System.out.println(ex.getMessage());
+            System.out.println(ex.getMessage()); //не видит данные
         }
     }
 

@@ -15,7 +15,9 @@ public class Client {
 
         int lind = 1;
 
-        int port = 0;
+        int tcp_port = 0;
+
+        int udp_port = 7005;
 
         String host = "";
 
@@ -27,7 +29,7 @@ public class Client {
 
         try
         {
-            sock = new DatagramSocket();
+            sock = new DatagramSocket(udp_port);
 
             while(true)
             {
@@ -41,23 +43,27 @@ public class Client {
                 byte[] InputData = reply.getData();
                 String s = new String(InputData, 0, reply.getLength());
 
-                if (s.matches("ready")) {
+                //Проверяем наличия в сообщении подстроки "ready port"
+                String REGEX = "ready port ";
+                String INPUT = s;
+                Pattern p = Pattern.compile(REGEX);
+                Matcher matcher = p.matcher(INPUT);
+
+                if (matcher.lookingAt()) {
+                    //при нахождении подстроки выводим адрес, udp и tcp порт
                     System.out.println("Сервер: " + reply.getAddress().getHostAddress() + ", udp порт: " + reply.getPort() + ", получено: " + s);
                     ConnectStatus = 1;
                     host = reply.getAddress().getHostAddress();
 
-                    String REGEX = "ready port"; //убираем пометки из сообщения, оставляя номер tcp порта
-                    String INPUT = s;
+                    //убираем пометки из сообщения, оставляя номер tcp порта
                     String REPLACE = "";
-                    Pattern p = Pattern.compile(REGEX);
-                    // получение matcher объекта
-                    Matcher m = p.matcher(INPUT);
-                    port = Integer.parseInt(m.replaceAll(REPLACE));
+                    tcp_port = Integer.parseInt(matcher.replaceAll(REPLACE));
                 }
                 else if (s.equalsIgnoreCase("")) {
-                    Thread.sleep(1000);
+                    //если сообщение пусто - ничего не делать
                 }
                 else {
+                    System.out.println("Получаем данные");
                     System.out.println("________________________");
                     System.out.println(s);
                     System.out.println("________________________");
@@ -70,22 +76,25 @@ public class Client {
                 }
 
                 if(ConnectStatus == 1) {
+                    Thread.sleep(5000);
                     //Передача заказа по TCP
+                    System.out.println("Подключаемся по TCP");
 
                     //Создаем сокет
                     Socket socket = null;
 
                     try {
-                        socket = new Socket(host, port);
+                        socket = new Socket(host, tcp_port);
                     } catch (UnknownHostException e) {
                         System.out.println("Неизвестный хост: " + host);
                         System.exit(-1);
                     } catch (IOException e) {
                         System.out.println("Ошибка ввода/вывода при создании сокета " + host
-                                + ":" + port);
+                                + ":" + tcp_port);
                         System.exit(-1);
                     }
 
+                    System.out.println("Инициализация потока");
                     //поток вывода, через который проходят сообщения
                     OutputStream out = null;
                     try {
@@ -95,14 +104,41 @@ public class Client {
                         System.exit(-1);
                     }
 
+                    System.out.println("Передача данных");
                     //транслируем объект в поток вывода
 
                     try(ObjectOutputStream oos = new ObjectOutputStream(new ObjectOutputStream(out))) {
                         oos.writeObject(ord);
+                        System.out.println("Передан заказ");
+                        ord.OurUser.ReadUser();
+                        for (int i = 0; i < ord.PurchasingItemsList.size(); i++) {
+                            System.out.println("__________");
+                            System.out.println("Идентификатор: "+ord.PurchasingItemsList.get(i).GetId().toString());
+                            System.out.println("Тип устройства: "+ord.PurchasingItemsList.get(i).GetDeviceType());
+                            System.out.println("Количество: "+ord.PurchasingItemsList.get(i).GetCount());
+                            System.out.println("Название: "+ord.PurchasingItemsList.get(i).GetName());
+                            System.out.println("Цена: "+ord.PurchasingItemsList.get(i).GetPrice());
+                            System.out.println("Изготовитель: "+ord.PurchasingItemsList.get(i).GetCompany());
+                            System.out.println("Модель: "+ord.PurchasingItemsList.get(i).GetModel());
+                            System.out.println("ОС: "+ord.PurchasingItemsList.get(i).GetOs());
+                            if ("Phone".equalsIgnoreCase(ord.PurchasingItemsList.get(i).GetDeviceType())) {
+                                System.out.println("Тип корпуса: "+ord.PurchasingItemsList.get(i).GetParam1());
+                            }
+                            else if ("Smartphone".equalsIgnoreCase(ord.PurchasingItemsList.get(i).GetDeviceType())) {
+                                System.out.println("Тип SIM-карты: "+ord.PurchasingItemsList.get(i).GetParam1());
+                                System.out.println("Число SIM-карт: "+ord.PurchasingItemsList.get(i).GetParam2());
+                            }
+                            else if ("Book".equalsIgnoreCase(ord.PurchasingItemsList.get(i).GetDeviceType())) {
+                                System.out.println("Процессор: "+ord.PurchasingItemsList.get(i).GetParam1());
+                                System.out.println("Разрешение экрана: "+ord.PurchasingItemsList.get(i).GetParam2());
+                            }
+                        }
+                        System.out.println("__________");
                     }
                     catch(Exception ex) {
                         System.out.println(ex.getMessage());
                     }
+                    System.out.println("Отключение TCP");
 
                 }
 

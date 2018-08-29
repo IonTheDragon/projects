@@ -26,7 +26,7 @@ public class Validate extends ACheck {
         // Создаем сокет
 
         try {
-            sock = new DatagramSocket(udp_port);
+            sock = new DatagramSocket();
 
             //Отправляем данные клиенту
             String s = "ready port "+tcp_port;
