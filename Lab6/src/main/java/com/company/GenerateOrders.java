@@ -15,6 +15,7 @@ public class GenerateOrders{
     ShoppingCart Cart3 = new ShoppingCart<Device>();
     ShoppingCart Cart4 = new ShoppingCart<Device>();
     ShoppingCart Cart5 = new ShoppingCart<Device>();
+    ShoppingCart Cart6 = new ShoppingCart<Device>();
 
     Phone ph0 = new Phone("1","Хсяомя","2500","Джамшут дистрибутив","Хсяомя Хъ","Ведроид 1.5","Классический"," ");
     Phone ph1 = new Phone("2","Хсяомя","3500","Джамшут дистрибутив","Хсяомя Хэ","Ведроид 2.0","Классический"," ");
@@ -65,17 +66,23 @@ public class GenerateOrders{
             Cart4.add(bk4);
             this.order = new Order(Cart4,customers,3);
         }
-        else if (ind == 4) {
+        else if (ind == 5) {
             Cart5.add(ph5);
             Cart5.add(sph5);
             Cart5.add(bk5);
             this.order = new Order(Cart5,customers,4);
         }
+        else if (ind == 6) {
+            Cart6.add(ph3);
+            Cart6.add(sph1);
+            Cart6.add(bk2);
+            this.order = new Order(Cart5,customers,5);
+        }
     }
 
     public Order InitOrder() {
         Cart0.add(ph0);
-        Order m_order = new Order(Cart0,customers,5);
+        Order m_order = new Order(Cart0,customers,6);
         return m_order;
     }
 

@@ -61,7 +61,7 @@ public class Validate extends ACheck {
 
                         StringBuilder data = new StringBuilder();
                         data.append("Заказ обработан\r\n");
-                        data.append("Время"+new Date()+"\r\n");
+                        data.append("Время "+new Date()+"\r\n");
                         data.append("Заказчик\r\n");
                         data.append("ID: "+order.OurUser.GetId()+"\r\n");
                         data.append("Имя: "+order.OurUser.GetName()+"\r\n");
@@ -71,33 +71,33 @@ public class Validate extends ACheck {
                         data.append("__________"+"\r\n");
 
                         for (int k = 0; k < order.PurchasingItemsList.size(); k++) {
-                            data.append("__________");
-                            data.append("Идентификатор: "+order.PurchasingItemsList.get(k).GetId().toString());
-                            data.append("Тип устройства: "+order.PurchasingItemsList.get(k).GetDeviceType());
-                            data.append("Количество: "+order.PurchasingItemsList.get(k).GetCount());
-                            data.append("Название: "+order.PurchasingItemsList.get(k).GetName());
-                            data.append("Цена: "+order.PurchasingItemsList.get(k).GetPrice());
-                            data.append("Изготовитель: "+order.PurchasingItemsList.get(k).GetCompany());
-                            data.append("Модель: "+order.PurchasingItemsList.get(k).GetModel());
-                            data.append("ОС: "+order.PurchasingItemsList.get(k).GetOs());
+                            data.append("__________"+"\r\n");
+                            data.append("Идентификатор: "+order.PurchasingItemsList.get(k).GetId().toString()+"\r\n");
+                            data.append("Тип устройства: "+order.PurchasingItemsList.get(k).GetDeviceType()+"\r\n");
+                            data.append("Количество: "+order.PurchasingItemsList.get(k).GetCount()+"\r\n");
+                            data.append("Название: "+order.PurchasingItemsList.get(k).GetName()+"\r\n");
+                            data.append("Цена: "+order.PurchasingItemsList.get(k).GetPrice()+"\r\n");
+                            data.append("Изготовитель: "+order.PurchasingItemsList.get(k).GetCompany()+"\r\n");
+                            data.append("Модель: "+order.PurchasingItemsList.get(k).GetModel()+"\r\n");
+                            data.append("ОС: "+order.PurchasingItemsList.get(k).GetOs()+"\r\n");
                             if ("Phone".equalsIgnoreCase(order.PurchasingItemsList.get(k).GetDeviceType())) {
-                                data.append("Тип корпуса: "+order.PurchasingItemsList.get(k).GetParam1());
+                                data.append("Тип корпуса: "+order.PurchasingItemsList.get(k).GetParam1()+"\r\n");
                             }
                             else if ("Smartphone".equalsIgnoreCase(order.PurchasingItemsList.get(k).GetDeviceType())) {
-                                data.append("Тип SIM-карты: "+order.PurchasingItemsList.get(k).GetParam1());
-                                data.append("Число SIM-карт: "+order.PurchasingItemsList.get(k).GetParam2());
+                                data.append("Тип SIM-карты: "+order.PurchasingItemsList.get(k).GetParam1()+"\r\n");
+                                data.append("Число SIM-карт: "+order.PurchasingItemsList.get(k).GetParam2()+"\r\n");
                             }
                             else if ("Book".equalsIgnoreCase(order.PurchasingItemsList.get(k).GetDeviceType())) {
-                                data.append("Процессор: "+order.PurchasingItemsList.get(k).GetParam1());
-                                data.append("Разрешение экрана: "+order.PurchasingItemsList.get(k).GetParam2());
+                                data.append("Процессор: "+order.PurchasingItemsList.get(k).GetParam1()+"\r\n");
+                                data.append("Разрешение экрана: "+order.PurchasingItemsList.get(k).GetParam2()+"\r\n");
                             }
                         }
                         String s = data.toString();
 
                         DatagramPacket dp = new DatagramPacket(s.getBytes(), s.getBytes().length, InetAddress.getByName(Address), udp_port);
                         sock.send(dp);
-                        System.out.println("Заказ обработан, оповещение отправлено");
-
+                        System.out.println("Заказ пользователя "+order.OurUser.GetName()+" обработан, оповещение отправлено");
+                        System.out.println("__________");
                         //
                     }
                     UpdatedOrdersList.add(order);
