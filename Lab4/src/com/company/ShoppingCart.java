@@ -62,7 +62,7 @@ public class ShoppingCart<T extends Device> {
         int is_found = 0;
         for (int i = 0; i < m_ShoppingCartList.size(); i++) {
 
-            if (m_id==m_ShoppingCartList.get(i).GetId()) {
+            if (m_id.equals(m_ShoppingCartList.get(i).GetId())) {
                 System.out.println("________________________");
                 System.out.println("Товар найден");
 

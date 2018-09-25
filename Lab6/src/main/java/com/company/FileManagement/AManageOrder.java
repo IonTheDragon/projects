@@ -147,8 +147,7 @@ abstract public class AManageOrder implements IOrder {
 
         for (int i = 0; i < m_OrdersList.size(); i++) {
             Order c_order = m_OrdersList.get(i);
-            List<Device> m_PurchasingItemsList = c_order.PurchasingItemsList;
-            if (m_id==m_PurchasingItemsList.get(i).GetId()) {
+            if (m_id.equals(c_order.OurUser.GetId())) {
                 m_order = m_OrdersList.get(i);
             }
             else System.out.println("ID не найден");

@@ -25,7 +25,7 @@ public class ManagerOrderFile extends AManageOrder{
 
         for(Order ord : OrdersIn.OrdersList)
         {
-            if (ord.OurUser.GetId()==m_id) {
+            if (ord.OurUser.GetId().equals(m_id)) {
                 System.out.println("__________");
                 System.out.println("Заказчик");
                 System.out.println("ID: "+ord.OurUser.GetId());
