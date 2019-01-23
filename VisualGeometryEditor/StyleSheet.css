@@ -1,0 +1,64 @@
+﻿body {
+    background-color: #526255;
+    min-width: 1000px;
+}
+#main {
+    background-color: #1b221c;
+    padding: 5px;
+}
+.lpanel {
+    position: relative; 
+    margin: 0 auto; 
+    float: left; 
+    top:9px; 
+    left:5px; 
+    height: 820px; 
+    width: 106px;
+}
+.rpanel {
+    position: relative; 
+    margin: 1px auto 0 auto; 
+    float: right; 
+    top:-30px; 
+    left:-14px; 
+    height: 850px; 
+    width: 106px;
+}
+.mpanel {
+    position: relative; 
+    margin: 0 140px 0 70px; 
+    left: 10px; 
+    top: -5px;
+}
+h1 {
+    padding: 5px; 
+    margin: 0 auto; 
+    color: #99CCFF; 
+    position: relative; 
+    text-align:center;
+}
+.baccept {
+    position: relative; 
+    height: 27px; 
+    width: 63px; 
+    top: 11px; 
+    left: 0;
+}
+.baddpoint {
+    position: relative; 
+    height: 27px; 
+    width: 63px; 
+    top: 19px; 
+    left: 3px;
+}
+.bclearpoint {
+    position: relative;
+    height: 27px;
+    width: 63px;
+    top: 4px;
+    left: 3px;
+}
+.errortext {
+    margin-left: 5px;
+    color: red;
+}
