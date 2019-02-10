@@ -1,0 +1,866 @@
+[
+  {
+    "name": "symfony",
+    "platform": "linux_amd64",
+    "sha256": "a4ab67ca343ca0549414bfd838a73cd96a3a0ea0",
+    "url": "https://get.symfony.com/cli/v4.2.8/symfony_linux_amd64",
+    "version": "4.2.8",
+    "notes": "- Add the `version` command as an alias for `-V`\n- Make spinner works for all terminal emulators\n- Add more feedback during `project:edit`\n- Always ask for confirmation during project creation\n- Expose RabbitMQ management URL",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "linux_386",
+    "sha256": "dc1acea2351b0af2c2775a3484ab3e594a882e6c",
+    "url": "https://get.symfony.com/cli/v4.2.8/symfony_linux_386",
+    "version": "4.2.8",
+    "notes": "- Add the `version` command as an alias for `-V`\n- Make spinner works for all terminal emulators\n- Add more feedback during `project:edit`\n- Always ask for confirmation during project creation\n- Expose RabbitMQ management URL",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "darwin_amd64",
+    "sha256": "4b93cf4f19f9880cfb35fffb116e571f2a305776",
+    "url": "https://get.symfony.com/cli/v4.2.8/symfony_darwin_amd64",
+    "version": "4.2.8",
+    "notes": "- Add the `version` command as an alias for `-V`\n- Make spinner works for all terminal emulators\n- Add more feedback during `project:edit`\n- Always ask for confirmation during project creation\n- Expose RabbitMQ management URL",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "darwin_386",
+    "sha256": "3dacac5811410356298455a4ad4423c548acf637",
+    "url": "https://get.symfony.com/cli/v4.2.8/symfony_darwin_386",
+    "version": "4.2.8",
+    "notes": "- Add the `version` command as an alias for `-V`\n- Make spinner works for all terminal emulators\n- Add more feedback during `project:edit`\n- Always ask for confirmation during project creation\n- Expose RabbitMQ management URL",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "windows_amd64",
+    "sha256": "79024bb70e250f69046b3a0be582e88faf512845",
+    "url": "https://get.symfony.com/cli/v4.2.8/symfony_windows_amd64",
+    "version": "4.2.8",
+    "notes": "- Add the `version` command as an alias for `-V`\n- Make spinner works for all terminal emulators\n- Add more feedback during `project:edit`\n- Always ask for confirmation during project creation\n- Expose RabbitMQ management URL",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "windows_386",
+    "sha256": "62837ef34787fd6d2ead64ffbbbe0b3b02df461f",
+    "url": "https://get.symfony.com/cli/v4.2.8/symfony_windows_386",
+    "version": "4.2.8",
+    "notes": "- Add the `version` command as an alias for `-V`\n- Make spinner works for all terminal emulators\n- Add more feedback during `project:edit`\n- Always ask for confirmation during project creation\n- Expose RabbitMQ management URL",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "linux_amd64",
+    "sha256": "8e87b5e1ce0941a9ed6b2589c16b76e3b4d1e46f",
+    "url": "https://get.symfony.com/cli/v4.2.7/symfony_linux_amd64",
+    "version": "4.2.7",
+    "notes": "- Fix `symfony composer` used PHP version\n- Add `COMPOSER_MEMORY_LIMIT=-1` when running Composer\n- Fix client is not respecting `HTTP[S]_PROXY` environment variable\n- Improve client timeout configuration\n- Add support for non inheritable variables\n- Fix `symfony new` to always install the latest version of a skeleton when version is `x.y`\n- Improve error message when one has not yet access to SymfonyCloud",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "linux_386",
+    "sha256": "78a150ad97496903e141bee9b4c24d0828b3b07f",
+    "url": "https://get.symfony.com/cli/v4.2.7/symfony_linux_386",
+    "version": "4.2.7",
+    "notes": "- Fix `symfony composer` used PHP version\n- Add `COMPOSER_MEMORY_LIMIT=-1` when running Composer\n- Fix client is not respecting `HTTP[S]_PROXY` environment variable\n- Improve client timeout configuration\n- Add support for non inheritable variables\n- Fix `symfony new` to always install the latest version of a skeleton when version is `x.y`\n- Improve error message when one has not yet access to SymfonyCloud",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "darwin_amd64",
+    "sha256": "80dafcc0515c3eddbd5dfc2fc8a2a43a3b6fe3ea",
+    "url": "https://get.symfony.com/cli/v4.2.7/symfony_darwin_amd64",
+    "version": "4.2.7",
+    "notes": "- Fix `symfony composer` used PHP version\n- Add `COMPOSER_MEMORY_LIMIT=-1` when running Composer\n- Fix client is not respecting `HTTP[S]_PROXY` environment variable\n- Improve client timeout configuration\n- Add support for non inheritable variables\n- Fix `symfony new` to always install the latest version of a skeleton when version is `x.y`\n- Improve error message when one has not yet access to SymfonyCloud",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "darwin_386",
+    "sha256": "7b4ffb6ccaf2ac6d04d73b391447b3b1ccd7dbc9",
+    "url": "https://get.symfony.com/cli/v4.2.7/symfony_darwin_386",
+    "version": "4.2.7",
+    "notes": "- Fix `symfony composer` used PHP version\n- Add `COMPOSER_MEMORY_LIMIT=-1` when running Composer\n- Fix client is not respecting `HTTP[S]_PROXY` environment variable\n- Improve client timeout configuration\n- Add support for non inheritable variables\n- Fix `symfony new` to always install the latest version of a skeleton when version is `x.y`\n- Improve error message when one has not yet access to SymfonyCloud",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "windows_amd64",
+    "sha256": "936da1c2ac1503b6aab26e9d4383ef8bceaf3625",
+    "url": "https://get.symfony.com/cli/v4.2.7/symfony_windows_amd64",
+    "version": "4.2.7",
+    "notes": "- Fix `symfony composer` used PHP version\n- Add `COMPOSER_MEMORY_LIMIT=-1` when running Composer\n- Fix client is not respecting `HTTP[S]_PROXY` environment variable\n- Improve client timeout configuration\n- Add support for non inheritable variables\n- Fix `symfony new` to always install the latest version of a skeleton when version is `x.y`\n- Improve error message when one has not yet access to SymfonyCloud",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "windows_386",
+    "sha256": "aae76d6aae24ba16cb42cfafd6ec1074adbc5360",
+    "url": "https://get.symfony.com/cli/v4.2.7/symfony_windows_386",
+    "version": "4.2.7",
+    "notes": "- Fix `symfony composer` used PHP version\n- Add `COMPOSER_MEMORY_LIMIT=-1` when running Composer\n- Fix client is not respecting `HTTP[S]_PROXY` environment variable\n- Improve client timeout configuration\n- Add support for non inheritable variables\n- Fix `symfony new` to always install the latest version of a skeleton when version is `x.y`\n- Improve error message when one has not yet access to SymfonyCloud",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "linux_amd64",
+    "sha256": "2179413e8db0ce71f2350b0705872381c2255483",
+    "url": "https://get.symfony.com/cli/v4.2.6/symfony_linux_amd64",
+    "version": "4.2.6",
+    "notes": "- Check the directory is tracked by Git before linking\n- Run `git init` if necessary during `project:create`\n- Fix environment list is missing environment whose parent is not master",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "linux_386",
+    "sha256": "606582da7fc414ca5e05fbe173245d00e56b6ee2",
+    "url": "https://get.symfony.com/cli/v4.2.6/symfony_linux_386",
+    "version": "4.2.6",
+    "notes": "- Check the directory is tracked by Git before linking\n- Run `git init` if necessary during `project:create`\n- Fix environment list is missing environment whose parent is not master",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "darwin_amd64",
+    "sha256": "638abb0a99844525db4ed4173d775108bf61f772",
+    "url": "https://get.symfony.com/cli/v4.2.6/symfony_darwin_amd64",
+    "version": "4.2.6",
+    "notes": "- Check the directory is tracked by Git before linking\n- Run `git init` if necessary during `project:create`\n- Fix environment list is missing environment whose parent is not master",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "darwin_386",
+    "sha256": "3527e924a06cc7fcd23b5c5303bb33ddd9824730",
+    "url": "https://get.symfony.com/cli/v4.2.6/symfony_darwin_386",
+    "version": "4.2.6",
+    "notes": "- Check the directory is tracked by Git before linking\n- Run `git init` if necessary during `project:create`\n- Fix environment list is missing environment whose parent is not master",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "windows_amd64",
+    "sha256": "11f98308c1b59cccb5287389b6d9f9f05f4eb029",
+    "url": "https://get.symfony.com/cli/v4.2.6/symfony_windows_amd64",
+    "version": "4.2.6",
+    "notes": "- Check the directory is tracked by Git before linking\n- Run `git init` if necessary during `project:create`\n- Fix environment list is missing environment whose parent is not master",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "windows_386",
+    "sha256": "3ec9314b52e1b1fb79eebf7988dda85a119b5d64",
+    "url": "https://get.symfony.com/cli/v4.2.6/symfony_windows_386",
+    "version": "4.2.6",
+    "notes": "- Check the directory is tracked by Git before linking\n- Run `git init` if necessary during `project:create`\n- Fix environment list is missing environment whose parent is not master",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "linux_amd64",
+    "sha256": "f819b06f75a420c95e06655fc3e0d0f0f5cc8080",
+    "url": "https://get.symfony.com/cli/v4.2.5/symfony_linux_amd64",
+    "version": "4.2.5",
+    "notes": "- Fix bug where Composer was not able to restart itself without XDebug\n- Improve output of `server:status`\n- Fix race condition in `server:stop`\n- Remove unused `interactive` flag from `project:edit` command",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "linux_386",
+    "sha256": "95d65dce7014f86b831dfd40548e7526c6bc326d",
+    "url": "https://get.symfony.com/cli/v4.2.5/symfony_linux_386",
+    "version": "4.2.5",
+    "notes": "- Fix bug where Composer was not able to restart itself without XDebug\n- Improve output of `server:status`\n- Fix race condition in `server:stop`\n- Remove unused `interactive` flag from `project:edit` command",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "darwin_amd64",
+    "sha256": "fbacbf7469ec537724c29ba9ad6cae1bff94368e",
+    "url": "https://get.symfony.com/cli/v4.2.5/symfony_darwin_amd64",
+    "version": "4.2.5",
+    "notes": "- Fix bug where Composer was not able to restart itself without XDebug\n- Improve output of `server:status`\n- Fix race condition in `server:stop`\n- Remove unused `interactive` flag from `project:edit` command",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "darwin_386",
+    "sha256": "3c957fb065b0b7ab717f3a46df7ef8423fb95edf",
+    "url": "https://get.symfony.com/cli/v4.2.5/symfony_darwin_386",
+    "version": "4.2.5",
+    "notes": "- Fix bug where Composer was not able to restart itself without XDebug\n- Improve output of `server:status`\n- Fix race condition in `server:stop`\n- Remove unused `interactive` flag from `project:edit` command",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "windows_amd64",
+    "sha256": "c0fe0046436d259767412dbc015a543bf8d4e80a",
+    "url": "https://get.symfony.com/cli/v4.2.5/symfony_windows_amd64",
+    "version": "4.2.5",
+    "notes": "- Fix bug where Composer was not able to restart itself without XDebug\n- Improve output of `server:status`\n- Fix race condition in `server:stop`\n- Remove unused `interactive` flag from `project:edit` command",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "windows_386",
+    "sha256": "8130d768a49e069ba5ea9ea2f92a78a60262ff6e",
+    "url": "https://get.symfony.com/cli/v4.2.5/symfony_windows_386",
+    "version": "4.2.5",
+    "notes": "- Fix bug where Composer was not able to restart itself without XDebug\n- Improve output of `server:status`\n- Fix race condition in `server:stop`\n- Remove unused `interactive` flag from `project:edit` command",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "linux_amd64",
+    "sha256": "5834c52837a07615a7c81193f1cd2515bb402211",
+    "url": "https://get.symfony.com/cli/v4.2.4/symfony_linux_amd64",
+    "version": "4.2.4",
+    "notes": "- Add support for running `symfony composer`\n- Display command output when an error occurs while running sub-commands (`symfony new` and `symfony init`)\n- Replace the `--no-init` flag by `--cloud` on `symfony new`\n- Add support for running `symfony pecl` (works also for `pear`, `php-config`, `php-fpm`, and `php-cgi`)\n- Add `env:fpm:status` command to get PHP-FPM status\n- Add `local:php:wrappers:install` to install the PHP wrappers\n- Add support for `PHP_BINARY`/`PHP_PATH`\n- Fix `SERVER_PORT` env var on the local web server (remove `SERVER_ADDR`, add support for `X-Forwarded-Port`)",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "linux_386",
+    "sha256": "3b2873d56c582da855c3ce6869405399b2ac5458",
+    "url": "https://get.symfony.com/cli/v4.2.4/symfony_linux_386",
+    "version": "4.2.4",
+    "notes": "- Add support for running `symfony composer`\n- Display command output when an error occurs while running sub-commands (`symfony new` and `symfony init`)\n- Replace the `--no-init` flag by `--cloud` on `symfony new`\n- Add support for running `symfony pecl` (works also for `pear`, `php-config`, `php-fpm`, and `php-cgi`)\n- Add `env:fpm:status` command to get PHP-FPM status\n- Add `local:php:wrappers:install` to install the PHP wrappers\n- Add support for `PHP_BINARY`/`PHP_PATH`\n- Fix `SERVER_PORT` env var on the local web server (remove `SERVER_ADDR`, add support for `X-Forwarded-Port`)",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "darwin_amd64",
+    "sha256": "e6170889c445c9d880bb38b876edb02d117f5ea0",
+    "url": "https://get.symfony.com/cli/v4.2.4/symfony_darwin_amd64",
+    "version": "4.2.4",
+    "notes": "- Add support for running `symfony composer`\n- Display command output when an error occurs while running sub-commands (`symfony new` and `symfony init`)\n- Replace the `--no-init` flag by `--cloud` on `symfony new`\n- Add support for running `symfony pecl` (works also for `pear`, `php-config`, `php-fpm`, and `php-cgi`)\n- Add `env:fpm:status` command to get PHP-FPM status\n- Add `local:php:wrappers:install` to install the PHP wrappers\n- Add support for `PHP_BINARY`/`PHP_PATH`\n- Fix `SERVER_PORT` env var on the local web server (remove `SERVER_ADDR`, add support for `X-Forwarded-Port`)",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "darwin_386",
+    "sha256": "10b620683720bc7ccb473a43497f00e60cec18fd",
+    "url": "https://get.symfony.com/cli/v4.2.4/symfony_darwin_386",
+    "version": "4.2.4",
+    "notes": "- Add support for running `symfony composer`\n- Display command output when an error occurs while running sub-commands (`symfony new` and `symfony init`)\n- Replace the `--no-init` flag by `--cloud` on `symfony new`\n- Add support for running `symfony pecl` (works also for `pear`, `php-config`, `php-fpm`, and `php-cgi`)\n- Add `env:fpm:status` command to get PHP-FPM status\n- Add `local:php:wrappers:install` to install the PHP wrappers\n- Add support for `PHP_BINARY`/`PHP_PATH`\n- Fix `SERVER_PORT` env var on the local web server (remove `SERVER_ADDR`, add support for `X-Forwarded-Port`)",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "windows_amd64",
+    "sha256": "b9a1bf6d11902936e6cd8155cd3aaa15efc0929a",
+    "url": "https://get.symfony.com/cli/v4.2.4/symfony_windows_amd64",
+    "version": "4.2.4",
+    "notes": "- Add support for running `symfony composer`\n- Display command output when an error occurs while running sub-commands (`symfony new` and `symfony init`)\n- Replace the `--no-init` flag by `--cloud` on `symfony new`\n- Add support for running `symfony pecl` (works also for `pear`, `php-config`, `php-fpm`, and `php-cgi`)\n- Add `env:fpm:status` command to get PHP-FPM status\n- Add `local:php:wrappers:install` to install the PHP wrappers\n- Add support for `PHP_BINARY`/`PHP_PATH`\n- Fix `SERVER_PORT` env var on the local web server (remove `SERVER_ADDR`, add support for `X-Forwarded-Port`)",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "windows_386",
+    "sha256": "baa14b0727732631f3009e4a96f0e1b6c2c09fb3",
+    "url": "https://get.symfony.com/cli/v4.2.4/symfony_windows_386",
+    "version": "4.2.4",
+    "notes": "- Add support for running `symfony composer`\n- Display command output when an error occurs while running sub-commands (`symfony new` and `symfony init`)\n- Replace the `--no-init` flag by `--cloud` on `symfony new`\n- Add support for running `symfony pecl` (works also for `pear`, `php-config`, `php-fpm`, and `php-cgi`)\n- Add `env:fpm:status` command to get PHP-FPM status\n- Add `local:php:wrappers:install` to install the PHP wrappers\n- Add support for `PHP_BINARY`/`PHP_PATH`\n- Fix `SERVER_PORT` env var on the local web server (remove `SERVER_ADDR`, add support for `X-Forwarded-Port`)",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "linux_amd64",
+    "sha256": "b234edaa406a681d52e9be4105f23cd93d6d6970",
+    "url": "https://get.symfony.com/cli/v4.2.3/symfony_linux_amd64",
+    "version": "4.2.3",
+    "notes": "- Add support for `--app` on `var:get`/`vars`\n- Fix running a cron in a multi-app project\n- Fix the `--app` flag behavior\n- Fix deleting an inactive environment\n- Improve some error messages when managing a Cloud project\n- Fix deploying a project from a sub-directory\n- Improve cloud app detection when a single app is not in the root directory\n- Remove warning when deploying a project without a `composer.lock` file\n- Add MacPorts support",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "linux_386",
+    "sha256": "f6b12c4326808925781a965511c181ad11d20525",
+    "url": "https://get.symfony.com/cli/v4.2.3/symfony_linux_386",
+    "version": "4.2.3",
+    "notes": "- Add support for `--app` on `var:get`/`vars`\n- Fix running a cron in a multi-app project\n- Fix the `--app` flag behavior\n- Fix deleting an inactive environment\n- Improve some error messages when managing a Cloud project\n- Fix deploying a project from a sub-directory\n- Improve cloud app detection when a single app is not in the root directory\n- Remove warning when deploying a project without a `composer.lock` file\n- Add MacPorts support",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "darwin_amd64",
+    "sha256": "fe70788aaa2480364b7793f3af871b8b78436e61",
+    "url": "https://get.symfony.com/cli/v4.2.3/symfony_darwin_amd64",
+    "version": "4.2.3",
+    "notes": "- Add support for `--app` on `var:get`/`vars`\n- Fix running a cron in a multi-app project\n- Fix the `--app` flag behavior\n- Fix deleting an inactive environment\n- Improve some error messages when managing a Cloud project\n- Fix deploying a project from a sub-directory\n- Improve cloud app detection when a single app is not in the root directory\n- Remove warning when deploying a project without a `composer.lock` file\n- Add MacPorts support",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "darwin_386",
+    "sha256": "48c5fbb1140b197bc7c18be29495bd3bbef3ccc4",
+    "url": "https://get.symfony.com/cli/v4.2.3/symfony_darwin_386",
+    "version": "4.2.3",
+    "notes": "- Add support for `--app` on `var:get`/`vars`\n- Fix running a cron in a multi-app project\n- Fix the `--app` flag behavior\n- Fix deleting an inactive environment\n- Improve some error messages when managing a Cloud project\n- Fix deploying a project from a sub-directory\n- Improve cloud app detection when a single app is not in the root directory\n- Remove warning when deploying a project without a `composer.lock` file\n- Add MacPorts support",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "windows_amd64",
+    "sha256": "d7231c987c8e2d9cab2e7a5d2b7a7105174513bf",
+    "url": "https://get.symfony.com/cli/v4.2.3/symfony_windows_amd64",
+    "version": "4.2.3",
+    "notes": "- Add support for `--app` on `var:get`/`vars`\n- Fix running a cron in a multi-app project\n- Fix the `--app` flag behavior\n- Fix deleting an inactive environment\n- Improve some error messages when managing a Cloud project\n- Fix deploying a project from a sub-directory\n- Improve cloud app detection when a single app is not in the root directory\n- Remove warning when deploying a project without a `composer.lock` file\n- Add MacPorts support",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "windows_386",
+    "sha256": "25a63268a8d8c69196dcf03bef3338e3bfad01bc",
+    "url": "https://get.symfony.com/cli/v4.2.3/symfony_windows_386",
+    "version": "4.2.3",
+    "notes": "- Add support for `--app` on `var:get`/`vars`\n- Fix running a cron in a multi-app project\n- Fix the `--app` flag behavior\n- Fix deleting an inactive environment\n- Improve some error messages when managing a Cloud project\n- Fix deploying a project from a sub-directory\n- Improve cloud app detection when a single app is not in the root directory\n- Remove warning when deploying a project without a `composer.lock` file\n- Add MacPorts support",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "linux_amd64",
+    "sha256": "06922cc22b06cdbab6fd6efdb21efd31bf15a00d",
+    "url": "https://get.symfony.com/cli/v4.2.2/symfony_linux_amd64",
+    "version": "4.2.2",
+    "notes": "- Fix panic for ignored errors during the servers startup\n- Add support for using the local web server on pure-HTML websites\n- Fix PHP -S server HTTP response (extra first empty char)\n- Fix best port detection for the web server\n- Fix local domain name matching with the proxy when using wildcard domain names\n- Fix `server:list` output when some background commands are running\n- Check if current environment exists before executing prechecks on `deploy`\n- Allow to create a new project from a linked directory if using `--no-link`",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "linux_386",
+    "sha256": "c8070045da015e33addc225a0ad7aceb75f88a35",
+    "url": "https://get.symfony.com/cli/v4.2.2/symfony_linux_386",
+    "version": "4.2.2",
+    "notes": "- Fix panic for ignored errors during the servers startup\n- Add support for using the local web server on pure-HTML websites\n- Fix PHP -S server HTTP response (extra first empty char)\n- Fix best port detection for the web server\n- Fix local domain name matching with the proxy when using wildcard domain names\n- Fix `server:list` output when some background commands are running\n- Check if current environment exists before executing prechecks on `deploy`\n- Allow to create a new project from a linked directory if using `--no-link`",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "darwin_amd64",
+    "sha256": "e2e75d948833fc3a8cd5df67934ce3fa715a2557",
+    "url": "https://get.symfony.com/cli/v4.2.2/symfony_darwin_amd64",
+    "version": "4.2.2",
+    "notes": "- Fix panic for ignored errors during the servers startup\n- Add support for using the local web server on pure-HTML websites\n- Fix PHP -S server HTTP response (extra first empty char)\n- Fix best port detection for the web server\n- Fix local domain name matching with the proxy when using wildcard domain names\n- Fix `server:list` output when some background commands are running\n- Check if current environment exists before executing prechecks on `deploy`\n- Allow to create a new project from a linked directory if using `--no-link`",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "darwin_386",
+    "sha256": "a32d597d78dc4a142309b30d9e7dcd19f38eeff3",
+    "url": "https://get.symfony.com/cli/v4.2.2/symfony_darwin_386",
+    "version": "4.2.2",
+    "notes": "- Fix panic for ignored errors during the servers startup\n- Add support for using the local web server on pure-HTML websites\n- Fix PHP -S server HTTP response (extra first empty char)\n- Fix best port detection for the web server\n- Fix local domain name matching with the proxy when using wildcard domain names\n- Fix `server:list` output when some background commands are running\n- Check if current environment exists before executing prechecks on `deploy`\n- Allow to create a new project from a linked directory if using `--no-link`",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "windows_amd64",
+    "sha256": "1041ae4b489673063c82ed33f2ddbbc6fc3c5730",
+    "url": "https://get.symfony.com/cli/v4.2.2/symfony_windows_amd64",
+    "version": "4.2.2",
+    "notes": "- Fix panic for ignored errors during the servers startup\n- Add support for using the local web server on pure-HTML websites\n- Fix PHP -S server HTTP response (extra first empty char)\n- Fix best port detection for the web server\n- Fix local domain name matching with the proxy when using wildcard domain names\n- Fix `server:list` output when some background commands are running\n- Check if current environment exists before executing prechecks on `deploy`\n- Allow to create a new project from a linked directory if using `--no-link`",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "windows_386",
+    "sha256": "fdb215c2867a27cb2016cc0b5d42c1b548aefa9a",
+    "url": "https://get.symfony.com/cli/v4.2.2/symfony_windows_386",
+    "version": "4.2.2",
+    "notes": "- Fix panic for ignored errors during the servers startup\n- Add support for using the local web server on pure-HTML websites\n- Fix PHP -S server HTTP response (extra first empty char)\n- Fix best port detection for the web server\n- Fix local domain name matching with the proxy when using wildcard domain names\n- Fix `server:list` output when some background commands are running\n- Check if current environment exists before executing prechecks on `deploy`\n- Allow to create a new project from a linked directory if using `--no-link`",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "linux_amd64",
+    "sha256": "3405963a04d1976a9fbdaff56f2cc75d439cd46b",
+    "url": "https://get.symfony.com/cli/v4.2.1/symfony_linux_amd64",
+    "version": "4.2.1",
+    "notes": "- Fix release issue",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "linux_386",
+    "sha256": "33a34a2a5e26f72b31eb7220022134e2ea4aa39d",
+    "url": "https://get.symfony.com/cli/v4.2.1/symfony_linux_386",
+    "version": "4.2.1",
+    "notes": "- Fix release issue",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "darwin_amd64",
+    "sha256": "f19d63cf7bc0b637e87c11fca0bae5f78ace39cc",
+    "url": "https://get.symfony.com/cli/v4.2.1/symfony_darwin_amd64",
+    "version": "4.2.1",
+    "notes": "- Fix release issue",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "darwin_386",
+    "sha256": "c4542538ce212cd67077190d28b543bc5afa92af",
+    "url": "https://get.symfony.com/cli/v4.2.1/symfony_darwin_386",
+    "version": "4.2.1",
+    "notes": "- Fix release issue",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "windows_amd64",
+    "sha256": "ce07bd7dd08dcf4898031b6ef5f77b317c8ad8af",
+    "url": "https://get.symfony.com/cli/v4.2.1/symfony_windows_amd64",
+    "version": "4.2.1",
+    "notes": "- Fix release issue",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "windows_386",
+    "sha256": "adb47d1d151f93afb8b58a2865d3bb1b1480de29",
+    "url": "https://get.symfony.com/cli/v4.2.1/symfony_windows_386",
+    "version": "4.2.1",
+    "notes": "- Fix release issue",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "linux_amd64",
+    "sha256": "120bfee351ee18e7ba65fe5d3217a6bf4cc53ed8",
+    "url": "https://get.symfony.com/cli/v4.2.0/symfony_linux_amd64",
+    "version": "4.2.0",
+    "notes": "- Remove `--version` as an alias for `-V`\n- Add `--version` flag for `symfony new`",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "linux_386",
+    "sha256": "35c7e607ba53dd9cbaae0958e4539cafa552a423",
+    "url": "https://get.symfony.com/cli/v4.2.0/symfony_linux_386",
+    "version": "4.2.0",
+    "notes": "- Remove `--version` as an alias for `-V`\n- Add `--version` flag for `symfony new`",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "darwin_amd64",
+    "sha256": "5fb3489faea743c75b819b14727712a24dd2dbf5",
+    "url": "https://get.symfony.com/cli/v4.2.0/symfony_darwin_amd64",
+    "version": "4.2.0",
+    "notes": "- Remove `--version` as an alias for `-V`\n- Add `--version` flag for `symfony new`",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "darwin_386",
+    "sha256": "cde1b6c6513ddd5941cde7537e21e69ebe2099f6",
+    "url": "https://get.symfony.com/cli/v4.2.0/symfony_darwin_386",
+    "version": "4.2.0",
+    "notes": "- Remove `--version` as an alias for `-V`\n- Add `--version` flag for `symfony new`",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "windows_amd64",
+    "sha256": "71fe85b8bd8bcd9298f6bc4144243240f68dba47",
+    "url": "https://get.symfony.com/cli/v4.2.0/symfony_windows_amd64",
+    "version": "4.2.0",
+    "notes": "- Remove `--version` as an alias for `-V`\n- Add `--version` flag for `symfony new`",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "windows_386",
+    "sha256": "5779592f4e8dad77180db212425e845ee806ce32",
+    "url": "https://get.symfony.com/cli/v4.2.0/symfony_windows_386",
+    "version": "4.2.0",
+    "notes": "- Remove `--version` as an alias for `-V`\n- Add `--version` flag for `symfony new`",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "linux_amd64",
+    "sha256": "6d6d701be40f13b5ff0966842d256e802f727cb4",
+    "url": "https://get.symfony.com/cli/v4.1.1/symfony_linux_amd64",
+    "version": "4.1.1",
+    "notes": "- Fix default PHP version discovery\n- Improve currency formatting for plan selection",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "linux_386",
+    "sha256": "bb899f6263f086563cff1b5a7410b1da3082d187",
+    "url": "https://get.symfony.com/cli/v4.1.1/symfony_linux_386",
+    "version": "4.1.1",
+    "notes": "- Fix default PHP version discovery\n- Improve currency formatting for plan selection",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "darwin_amd64",
+    "sha256": "a79aadeae61c4919e4ad44def7ea9ece77e905d4",
+    "url": "https://get.symfony.com/cli/v4.1.1/symfony_darwin_amd64",
+    "version": "4.1.1",
+    "notes": "- Fix default PHP version discovery\n- Improve currency formatting for plan selection",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "darwin_386",
+    "sha256": "d0435dd7edf9d55e99aa7610f41c1cc54f50a970",
+    "url": "https://get.symfony.com/cli/v4.1.1/symfony_darwin_386",
+    "version": "4.1.1",
+    "notes": "- Fix default PHP version discovery\n- Improve currency formatting for plan selection",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "windows_amd64",
+    "sha256": "7ce5f207a4aa6260f378b2b3fb053d8c61bdffab",
+    "url": "https://get.symfony.com/cli/v4.1.1/symfony_windows_amd64",
+    "version": "4.1.1",
+    "notes": "- Fix default PHP version discovery\n- Improve currency formatting for plan selection",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "windows_386",
+    "sha256": "f91367ecd1e96e736d670d7a39bbb15aa13f64ea",
+    "url": "https://get.symfony.com/cli/v4.1.1/symfony_windows_386",
+    "version": "4.1.1",
+    "notes": "- Fix default PHP version discovery\n- Improve currency formatting for plan selection",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "linux_amd64",
+    "sha256": "22ecc59547fb6e90870242d0a99bafce25042677",
+    "url": "https://get.symfony.com/cli/v4.1.0/symfony_linux_amd64",
+    "version": "4.1.0",
+    "notes": "- Fix user env vars not defined in PHP-FPM (to mimick `php -S` behavior)\n- Fix `proxy:stop` when the proxy is not running\n- Fix relative directory support on the `--dir` flag\n- Add support for PHP installed via XAMPP on Windows/Linux/MacOS\n- Add support for PHP installed via MAMP on MacOS/Windows\n- Add support for PHP installed via phpbrew on MacOS/Linux\n- Add support for PHP installed via Cygwin/Chocolatey/WAMP on Windows\n- Display plan details (ressources and prices) during project creation",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "linux_386",
+    "sha256": "d83f6ce3a70aaae47c34f04e3ddd0db01667b3ed",
+    "url": "https://get.symfony.com/cli/v4.1.0/symfony_linux_386",
+    "version": "4.1.0",
+    "notes": "- Fix user env vars not defined in PHP-FPM (to mimick `php -S` behavior)\n- Fix `proxy:stop` when the proxy is not running\n- Fix relative directory support on the `--dir` flag\n- Add support for PHP installed via XAMPP on Windows/Linux/MacOS\n- Add support for PHP installed via MAMP on MacOS/Windows\n- Add support for PHP installed via phpbrew on MacOS/Linux\n- Add support for PHP installed via Cygwin/Chocolatey/WAMP on Windows\n- Display plan details (ressources and prices) during project creation",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "darwin_amd64",
+    "sha256": "54fdba5c27f545b1812aa79bd04d952d47c45c7b",
+    "url": "https://get.symfony.com/cli/v4.1.0/symfony_darwin_amd64",
+    "version": "4.1.0",
+    "notes": "- Fix user env vars not defined in PHP-FPM (to mimick `php -S` behavior)\n- Fix `proxy:stop` when the proxy is not running\n- Fix relative directory support on the `--dir` flag\n- Add support for PHP installed via XAMPP on Windows/Linux/MacOS\n- Add support for PHP installed via MAMP on MacOS/Windows\n- Add support for PHP installed via phpbrew on MacOS/Linux\n- Add support for PHP installed via Cygwin/Chocolatey/WAMP on Windows\n- Display plan details (ressources and prices) during project creation",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "darwin_386",
+    "sha256": "db0aed4c383c363068d7033b69cee79804cb957b",
+    "url": "https://get.symfony.com/cli/v4.1.0/symfony_darwin_386",
+    "version": "4.1.0",
+    "notes": "- Fix user env vars not defined in PHP-FPM (to mimick `php -S` behavior)\n- Fix `proxy:stop` when the proxy is not running\n- Fix relative directory support on the `--dir` flag\n- Add support for PHP installed via XAMPP on Windows/Linux/MacOS\n- Add support for PHP installed via MAMP on MacOS/Windows\n- Add support for PHP installed via phpbrew on MacOS/Linux\n- Add support for PHP installed via Cygwin/Chocolatey/WAMP on Windows\n- Display plan details (ressources and prices) during project creation",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "windows_amd64",
+    "sha256": "1689f381c4e65220fb3098878c9e1ec553cc7938",
+    "url": "https://get.symfony.com/cli/v4.1.0/symfony_windows_amd64",
+    "version": "4.1.0",
+    "notes": "- Fix user env vars not defined in PHP-FPM (to mimick `php -S` behavior)\n- Fix `proxy:stop` when the proxy is not running\n- Fix relative directory support on the `--dir` flag\n- Add support for PHP installed via XAMPP on Windows/Linux/MacOS\n- Add support for PHP installed via MAMP on MacOS/Windows\n- Add support for PHP installed via phpbrew on MacOS/Linux\n- Add support for PHP installed via Cygwin/Chocolatey/WAMP on Windows\n- Display plan details (ressources and prices) during project creation",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "windows_386",
+    "sha256": "2b8c9ab025e345d91e1dad7b7a9cad4ba2d6d27e",
+    "url": "https://get.symfony.com/cli/v4.1.0/symfony_windows_386",
+    "version": "4.1.0",
+    "notes": "- Fix user env vars not defined in PHP-FPM (to mimick `php -S` behavior)\n- Fix `proxy:stop` when the proxy is not running\n- Fix relative directory support on the `--dir` flag\n- Add support for PHP installed via XAMPP on Windows/Linux/MacOS\n- Add support for PHP installed via MAMP on MacOS/Windows\n- Add support for PHP installed via phpbrew on MacOS/Linux\n- Add support for PHP installed via Cygwin/Chocolatey/WAMP on Windows\n- Display plan details (ressources and prices) during project creation",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "linux_amd64",
+    "sha256": "b5fd01fae0da479da1cb4c2d677c0247ca56e27d",
+    "url": "https://get.symfony.com/cli/v4.0.5/symfony_linux_amd64",
+    "version": "4.0.5",
+    "notes": "- Add `local:server:prod` command\n- Add `--allow-http` to `server:start`\n- PHP 7.3 is now supported\n- Fix `security:check` error when a version is an integer in `composer.lock`\n- Fix environment list formatting if environment name looks like a number",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "linux_386",
+    "sha256": "fcf49b9cdc99c87b0a6ed630f6aef63b71437355",
+    "url": "https://get.symfony.com/cli/v4.0.5/symfony_linux_386",
+    "version": "4.0.5",
+    "notes": "- Add `local:server:prod` command\n- Add `--allow-http` to `server:start`\n- PHP 7.3 is now supported\n- Fix `security:check` error when a version is an integer in `composer.lock`\n- Fix environment list formatting if environment name looks like a number",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "darwin_amd64",
+    "sha256": "defa9c25aba10e82d98ddc042b2910cbf767367c",
+    "url": "https://get.symfony.com/cli/v4.0.5/symfony_darwin_amd64",
+    "version": "4.0.5",
+    "notes": "- Add `local:server:prod` command\n- Add `--allow-http` to `server:start`\n- PHP 7.3 is now supported\n- Fix `security:check` error when a version is an integer in `composer.lock`\n- Fix environment list formatting if environment name looks like a number",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "darwin_386",
+    "sha256": "ad34b3ff1e2015743609acfc04dd0b2204e7172d",
+    "url": "https://get.symfony.com/cli/v4.0.5/symfony_darwin_386",
+    "version": "4.0.5",
+    "notes": "- Add `local:server:prod` command\n- Add `--allow-http` to `server:start`\n- PHP 7.3 is now supported\n- Fix `security:check` error when a version is an integer in `composer.lock`\n- Fix environment list formatting if environment name looks like a number",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "windows_amd64",
+    "sha256": "2e5ad011da79db4024bad7da1a79da3c99bc5d61",
+    "url": "https://get.symfony.com/cli/v4.0.5/symfony_windows_amd64",
+    "version": "4.0.5",
+    "notes": "- Add `local:server:prod` command\n- Add `--allow-http` to `server:start`\n- PHP 7.3 is now supported\n- Fix `security:check` error when a version is an integer in `composer.lock`\n- Fix environment list formatting if environment name looks like a number",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "windows_386",
+    "sha256": "ee741283b3e01dd58a35eb8b5c20035d731bb55f",
+    "url": "https://get.symfony.com/cli/v4.0.5/symfony_windows_386",
+    "version": "4.0.5",
+    "notes": "- Add `local:server:prod` command\n- Add `--allow-http` to `server:start`\n- PHP 7.3 is now supported\n- Fix `security:check` error when a version is an integer in `composer.lock`\n- Fix environment list formatting if environment name looks like a number",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "linux_amd64",
+    "sha256": "9ae71e40d6b115ee27ae110a1e2bf8bbd9921d25",
+    "url": "https://get.symfony.com/cli/v4.0.4/symfony_linux_amd64",
+    "version": "4.0.4",
+    "notes": "- Remove the beta flag on the local server",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "linux_386",
+    "sha256": "358e2e2b2a4a0d57f6a574b79d7215a15805c8d0",
+    "url": "https://get.symfony.com/cli/v4.0.4/symfony_linux_386",
+    "version": "4.0.4",
+    "notes": "- Remove the beta flag on the local server",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "darwin_amd64",
+    "sha256": "fc4f36a750f29b3dd852c8ad8c8ab2a6f4980548",
+    "url": "https://get.symfony.com/cli/v4.0.4/symfony_darwin_amd64",
+    "version": "4.0.4",
+    "notes": "- Remove the beta flag on the local server",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "darwin_386",
+    "sha256": "740fc69ab4213e2e56b3907c96bdc881dbd99651",
+    "url": "https://get.symfony.com/cli/v4.0.4/symfony_darwin_386",
+    "version": "4.0.4",
+    "notes": "- Remove the beta flag on the local server",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "windows_amd64",
+    "sha256": "8038d72d7724e1d5c4f0f5a544543c387857dad5",
+    "url": "https://get.symfony.com/cli/v4.0.4/symfony_windows_amd64",
+    "version": "4.0.4",
+    "notes": "- Remove the beta flag on the local server",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "windows_386",
+    "sha256": "f39af77251cdb9ef292174454107b0d252866213",
+    "url": "https://get.symfony.com/cli/v4.0.4/symfony_windows_386",
+    "version": "4.0.4",
+    "notes": "- Remove the beta flag on the local server",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "linux_amd64",
+    "sha256": "d45201a0fafe85284b3f504045b883429e70414e",
+    "url": "https://get.symfony.com/cli/v4.0.3/symfony_linux_amd64",
+    "version": "4.0.3",
+    "notes": "- Fix opening remote on first deploy",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "linux_386",
+    "sha256": "1598265a11976eb9c1fda98a3287910f37075dd8",
+    "url": "https://get.symfony.com/cli/v4.0.3/symfony_linux_386",
+    "version": "4.0.3",
+    "notes": "- Fix opening remote on first deploy",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "darwin_amd64",
+    "sha256": "49d909bf0f55aed7d1916308fcea188ed7c70fd6",
+    "url": "https://get.symfony.com/cli/v4.0.3/symfony_darwin_amd64",
+    "version": "4.0.3",
+    "notes": "- Fix opening remote on first deploy",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "darwin_386",
+    "sha256": "71093445be18d72c3f67aed1de069b33414ded28",
+    "url": "https://get.symfony.com/cli/v4.0.3/symfony_darwin_386",
+    "version": "4.0.3",
+    "notes": "- Fix opening remote on first deploy",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "windows_amd64",
+    "sha256": "799b424a961cbcf4b87cfbe9aa0a068087932b6c",
+    "url": "https://get.symfony.com/cli/v4.0.3/symfony_windows_amd64",
+    "version": "4.0.3",
+    "notes": "- Fix opening remote on first deploy",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "windows_386",
+    "sha256": "82c417de1594259ed8cc985d4559d351a4459460",
+    "url": "https://get.symfony.com/cli/v4.0.3/symfony_windows_386",
+    "version": "4.0.3",
+    "notes": "- Fix opening remote on first deploy",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "linux_amd64",
+    "sha256": "d493946805b92ad5df8ea371d85d2c07cfa7f9ac",
+    "url": "https://get.symfony.com/cli/v4.0.2/symfony_linux_amd64",
+    "version": "4.0.2",
+    "notes": "- Fix serverVersion DSN for MariaDB with Doctrine\n- Fix 'http method PATCH is not allowed for this path' during `project:scale`\n- Integrate security:check during deploy/redeploy\n- Windows: fix autoupdate, requires running uninstaller then download and run new installer",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "linux_386",
+    "sha256": "3fda57e068cdf0b9bebfb883c5dcbd0102b10e9f",
+    "url": "https://get.symfony.com/cli/v4.0.2/symfony_linux_386",
+    "version": "4.0.2",
+    "notes": "- Fix serverVersion DSN for MariaDB with Doctrine\n- Fix 'http method PATCH is not allowed for this path' during `project:scale`\n- Integrate security:check during deploy/redeploy\n- Windows: fix autoupdate, requires running uninstaller then download and run new installer",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "darwin_amd64",
+    "sha256": "55e8c1826b93180942c2a30d2bc361c89c602773",
+    "url": "https://get.symfony.com/cli/v4.0.2/symfony_darwin_amd64",
+    "version": "4.0.2",
+    "notes": "- Fix serverVersion DSN for MariaDB with Doctrine\n- Fix 'http method PATCH is not allowed for this path' during `project:scale`\n- Integrate security:check during deploy/redeploy\n- Windows: fix autoupdate, requires running uninstaller then download and run new installer",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "darwin_386",
+    "sha256": "cd374f4a2c646b5a8556df25a4923733accbe5f6",
+    "url": "https://get.symfony.com/cli/v4.0.2/symfony_darwin_386",
+    "version": "4.0.2",
+    "notes": "- Fix serverVersion DSN for MariaDB with Doctrine\n- Fix 'http method PATCH is not allowed for this path' during `project:scale`\n- Integrate security:check during deploy/redeploy\n- Windows: fix autoupdate, requires running uninstaller then download and run new installer",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "windows_amd64",
+    "sha256": "e07887483abb2d5fb34956da35e74e2ac5a9a0ee",
+    "url": "https://get.symfony.com/cli/v4.0.2/symfony_windows_amd64",
+    "version": "4.0.2",
+    "notes": "- Fix serverVersion DSN for MariaDB with Doctrine\n- Fix 'http method PATCH is not allowed for this path' during `project:scale`\n- Integrate security:check during deploy/redeploy\n- Windows: fix autoupdate, requires running uninstaller then download and run new installer",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "windows_386",
+    "sha256": "b5ad197b8b6aefb080761c22aee5605ac72ef40c",
+    "url": "https://get.symfony.com/cli/v4.0.2/symfony_windows_386",
+    "version": "4.0.2",
+    "notes": "- Fix serverVersion DSN for MariaDB with Doctrine\n- Fix 'http method PATCH is not allowed for this path' during `project:scale`\n- Integrate security:check during deploy/redeploy\n- Windows: fix autoupdate, requires running uninstaller then download and run new installer",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "linux_amd64",
+    "sha256": "ff4262518a73c397cf7ec704e89d3beebf77ef91",
+    "url": "https://get.symfony.com/cli/v4.0.1/symfony_linux_amd64",
+    "version": "4.0.1",
+    "notes": "",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "linux_386",
+    "sha256": "38f3c964eebd9f93a847044c5e4812f330960d0a",
+    "url": "https://get.symfony.com/cli/v4.0.1/symfony_linux_386",
+    "version": "4.0.1",
+    "notes": "",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "darwin_amd64",
+    "sha256": "9188d8720f8ed66017a5afe0a456a93f86fae382",
+    "url": "https://get.symfony.com/cli/v4.0.1/symfony_darwin_amd64",
+    "version": "4.0.1",
+    "notes": "",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "darwin_386",
+    "sha256": "58ea2d05604d899232baaefe78aa1ed1e537230e",
+    "url": "https://get.symfony.com/cli/v4.0.1/symfony_darwin_386",
+    "version": "4.0.1",
+    "notes": "",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "windows_amd64",
+    "sha256": "360807f56894b231fc240ebf9bf94bd655f1586d",
+    "url": "https://get.symfony.com/cli/v4.0.1/symfony_windows_amd64",
+    "version": "4.0.1",
+    "notes": "",
+    "updating": []
+  },
+  {
+    "name": "symfony",
+    "platform": "windows_386",
+    "sha256": "6a2b3a5c3ebdc9915e2cd62f8f5766f47059b940",
+    "url": "https://get.symfony.com/cli/v4.0.1/symfony_windows_386",
+    "version": "4.0.1",
+    "notes": "",
+    "updating": []
+  }
+]
