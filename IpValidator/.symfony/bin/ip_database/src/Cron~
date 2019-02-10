@@ -1,0 +1,2 @@
+0 12 * * * ~/.symfony/bin/ip_database$ php bin/console validate-ip validate_existed
+
