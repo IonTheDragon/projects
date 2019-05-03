@@ -147,7 +147,7 @@ class SiteController extends Controller
 			$result = $task->save();
 			if ($result) 
 			{
-				$out_arr = array('id' => $task->id, '$title' => $title, 'user' => $user, 'status' => $status, 'description' => $description, 'message' => 'added');				
+				$out_arr = array('id' => $task->id, 'title' => $title, 'user' => $user, 'status' => $status, 'description' => $description, 'message' => 'added');				
 			}	
 			else $out_arr = array('message' => 'error');				
 		}	
@@ -178,13 +178,14 @@ class SiteController extends Controller
 			$result = $task->save();
 			if ($result) 
 			{
-				$out_arr = array('id' => $id, '$title' => $title, 'user' => $user, 'status' => $status, 'description' => $description, 'message' => 'updated');				
+				$out_arr = array('id' => $id, 'title' => $title, 'user' => $user, 'status' => $status, 'description' => $description, 'message' => 'updated');				
 			}	
 			else $out_arr = array('message' => 'error');				
 		}	
 		else $out_arr = array('message' => 'access denied');
-		$output = json_encode($out_arr);
-        return $output;         		   	
+		$output = json_encode($out_arr);        
+            
+        return $output;      		   	
 	} 
     public function actionDeletetask()
     {
@@ -199,7 +200,7 @@ class SiteController extends Controller
 			$result = $task->delete();
 			if ($result) 
 			{
-				$out_arr = array('id' => $id, '$title' => $title, 'user' => $user, 'status' => $status, 'description' => $description, 'message' => 'deleted');				
+				$out_arr = array('id' => $id, 'title' => $title, 'user' => $user, 'status' => $status, 'description' => $description, 'message' => 'deleted');				
 			}	
 			else $out_arr = array('message' => 'error');				
 		}	

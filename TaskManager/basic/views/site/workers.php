@@ -6,14 +6,14 @@ use yii\widgets\LinkPager;
 ?>		
 <h4>Users</h4>
 <?=Yii::$app->user->isGuest ? ('<p>Please login to edit table</p>') : ('')?>
-<table>
+<table id="user_table">
 	<tr>
 		<td>User</td>
 		<td>Occupation</td>
 		<td colspan="2">Action</td>
 	</tr>	
 <?php foreach ($persons as $person): ?>
-	<tr>
+	<tr id="ptr<?php echo $person->id?>">
 		<td><?= Html::encode("{$person->name}") ?></td>
 		<td><?= $person->occupation ?></td>
 		<?=Yii::$app->user->isGuest ? ('<td></td>') : ('<td>'.Html::Button('Edit',array('onclick'=>'edit_person_form('.$person->id.');')).'</td><td>'.Html::Button('Delete',array('onclick'=>'delete_person('.$person->id.');')).'</td>')?>  

@@ -16,7 +16,7 @@ use yii\widgets\LinkPager;
 		<td colspan="2">Action</td>
 	</tr>		
 <?php foreach ($tasks as $task): ?>
-	<tr>
+	<tr id="tr<?php echo $task->id?>">
 		<td><?= Html::encode("{$task->title}") ?></td>
 		<td><?= $task->user ?></td>
 		<td><?= $task->status ?></td>

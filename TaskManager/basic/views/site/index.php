@@ -9,6 +9,9 @@ use yii\helpers\Url;
 
 $this->title = 'Task manager';
 ?>
+<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v0.6.4/dist/jBox.all.min.js"></script>
+<link href="https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v0.6.4/dist/jBox.all.min.css" rel="stylesheet">
 <div class="site-index">
 
     <h1>Task manager</h1>
@@ -79,8 +82,17 @@ function delete_task(data)
    data:{delete_task_id:data},
    dataType:'html',
    success:function(data){
-                alert(data); 
-                document.location.reload(true);
+				var json_data = jQuery.parseJSON(data);
+				new jBox('Notice', {
+					offset: {
+						y: 50
+					},
+					content: 'id:'+json_data.id+', title:'+json_data.title+', user:'+json_data.user+', status:'+json_data.status+', description:'+json_data.description+', message:'+json_data.message,
+					color: 'blue'
+				});				
+                $('#newform').html(''); 
+                $(".body-content").css("display","block"); 
+                $('#tr'+json_data.id).remove();
    },
    error:function(data){
                 alert("error");
@@ -135,8 +147,17 @@ function delete_person(data)
    data:{delete_person_id:data},
    dataType:'html',
    success:function(data){
-                alert(data); 
-                document.location.reload(true);
+				var json_data = jQuery.parseJSON(data);
+				new jBox('Notice', {
+					offset: {
+						y: 50
+					},
+					content: 'id:'+json_data.id+', name:'+json_data.name+', occupation:'+json_data.occupation+', message:'+json_data.message,
+					color: 'blue'
+				});								
+                $('#newform').html(''); 
+                $(".body-content").css("display","block"); 
+                $('#ptr'+json_data.id).remove();
    },
    error:function(data){
                 alert("error");
