@@ -30,14 +30,14 @@ if(isset($_SESSION['login'])) {
 		<p><?php echo $_SESSION['login']['count'].' '.$_SESSION['login']['currency']; ?></p>
 		<form action="http://localhost/KWHexchange/actions/add_count.php" method="post">
 			<h4>Add new KWH</h4>
-			<input type="number" name="count" step="0.01" required="true">
+			<input type="number" name="count" min="0" step="0.01" required="true">
 			<br>
 			<br>
 			<input type="submit" value="Enter">			
 		</form>
 		<form action="http://localhost/KWHexchange/actions/transfer.php" method="post">
 			<h4>Transfer KWH</h4>
-			<input type="number" name="count" step="0.01" max="<?php echo $_SESSION['login']['count'];?>" required="true">
+			<input type="number" name="count" step="0.01" min="0" max="<?php echo $_SESSION['login']['count'];?>" required="true">
 			<p>to account</p>
 			<input type="text" name="account" required="true">
 			<br>
