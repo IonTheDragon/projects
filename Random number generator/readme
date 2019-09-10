@@ -1,0 +1,15 @@
+Create next .htaccess file:
+
+RewriteEngine on
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^api/* api.php
+
+If you use https scheme, replace http with https in index.php;
+
+Create database 'b92312sl_random' with table 'random_numbers' and rows 'id', 'requestId', 'number', where 'requestId' and 'number' are integer;
+
+Replace login, password and host of database in api.php .
+
+Generator gets random id and integer value and places it to our database. We can call Retrieve function to get value by its id.
