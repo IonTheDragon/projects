@@ -148,6 +148,7 @@ $this->title = 'Главная';
 				 url: "<?= Url::toRoute(['/site/add']) ?>"
 			}).done(function() {
 				 datatable.draw();
+				 alert('Пользователь добавлен');
 			});					
 		}
 		
