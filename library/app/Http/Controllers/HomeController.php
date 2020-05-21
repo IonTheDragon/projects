@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Author;
 use App\Book;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -108,8 +109,25 @@ class HomeController extends Controller
 			$books = [];
 			foreach ($found_authors as $found_author)
 			{
-				$books[] = Book::where('author_id', $found_author)->first();
-			}			
+				//Ищем по автору
+				$abooks = Book::where('author_id', $found_author)->get();
+				foreach ($abooks as $abook)
+				{
+					$books[$abook->id] = $abook;
+				}
+				
+				//Ищем по соавтору
+				$cbooks = DB::table('coauthors')->where('author_id', $found_author)->get();
+				foreach ($cbooks as $cbook)
+				{
+					$book = Book::where('id', $cbook->book_id)->first();
+					$books[$book->id] = $book;
+				}
+			}	
+
+			//Если у авторов нет книг - ищем по названию книги
+			if (empty($books))
+				$books = Book::where('name', 'like', '%'.$reg.'%')->get();
 		}
 		
 		$data = [];
@@ -140,9 +158,19 @@ class HomeController extends Controller
 		$book = new Book;
 
         $book->name = $request->name;
-		$book->author_id = $request->author_id;
+		$book->author_id = $request->author_id[0];
 
         $book->save();
+		
+		foreach ($request->author_id as $key => $author_id)
+		{
+			if ($key > 0)
+			{
+				DB::table('coauthors')->insert(
+					['book_id' => $book->id, 'author_id' => $author_id]
+				);				
+			}
+		}
 		
         return redirect('books');
     }

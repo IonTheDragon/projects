@@ -29,8 +29,7 @@
                             <label for="author_id" class="col-md-4 col-form-label text-md-right">Автор</label>
 
                             <div class="col-md-6">
-								<select name="author_id" required>
-								<option value=""></option>
+								<select name="author_id[]" multiple required>
 								<?php
 								foreach($authors as $author)
 								{
